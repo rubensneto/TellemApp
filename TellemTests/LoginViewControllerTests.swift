@@ -24,8 +24,19 @@ class LoginViewControllerTests: XCTestCase {
     
     func testPlaceHolders() {
         let viewModel = loginVC.viewModel
-        XCTAssertEqual(loginVC.emailTextField.placeholder, viewModel?.emailTextFieldPlaceHolder)
-        XCTAssertEqual(loginVC.passwordTextField.placeholder, viewModel?.passwordTextFieldPlaceholder)
+        XCTAssertEqual(loginVC.emailTextField.placeholder, viewModel?.emailPlaceHolder)
+        XCTAssertEqual(loginVC.passwordTextField.placeholder, viewModel?.passwordPlacehoder)
+    }
+    
+    func testButtonTitles() {
+        let viewModel = loginVC.viewModel
+        XCTAssertEqual(loginVC.loginButton.titleLabel!.text, viewModel?.loginButtonTitle)
+        XCTAssertEqual(loginVC.signUpButton.titleLabel!.text, viewModel?.signUpButtonTitle)
+    }
+    
+    func testLabelText(){
+        let viewModel = loginVC.viewModel
+        XCTAssertEqual(loginVC.haveAnAccountLabel.text, viewModel?.haveAnAccountText)
     }
 
 }

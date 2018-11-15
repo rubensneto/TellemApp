@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		CE7E6977219AAECF00AF2FFC /* TellemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */; };
+		CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */; };
+		CEA34FFE219D676000C4AB86 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */; };
+		CEA35000219D692E00C4AB86 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFF219D692E00C4AB86 /* SignUpViewControllerTests.swift */; };
 		CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936442196BFD000DF3860 /* AppDelegate.swift */; };
 		CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936462196BFD000DF3860 /* LoginViewController.swift */; };
 		CEB9364C2196BFE000DF3860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB9364B2196BFE000DF3860 /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTextField.swift; sourceTree = "<group>"; };
+		CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		CEA34FFF219D692E00C4AB86 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		CEB936412196BFD000DF3860 /* Tellem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB936442196BFD000DF3860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEB936462196BFD000DF3860 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -87,13 +93,15 @@
 		CEB936432196BFD000DF3860 /* Tellem */ = {
 			isa = PBXGroup;
 			children = (
-				CE7E6975219AAE9900AF2FFC /* UI Components */,
 				CEB936442196BFD000DF3860 /* AppDelegate.swift */,
 				CEB936462196BFD000DF3860 /* LoginViewController.swift */,
 				CEB936662196C39B00DF3860 /* LoginViewModel.swift */,
+				CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */,
+				CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */,
 				CEB9364B2196BFE000DF3860 /* Assets.xcassets */,
 				CEB9364D2196BFE000DF3860 /* LaunchScreen.storyboard */,
 				CEB936502196BFE000DF3860 /* Info.plist */,
+				CE7E6975219AAE9900AF2FFC /* UI Components */,
 			);
 			path = Tellem;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 			children = (
 				CEB9365B2196BFE100DF3860 /* Info.plist */,
 				CEB936642196C24700DF3860 /* LoginViewControllerTests.swift */,
+				CEA34FFF219D692E00C4AB86 /* SignUpViewControllerTests.swift */,
 			);
 			path = TellemTests;
 			sourceTree = "<group>";
@@ -211,6 +220,8 @@
 				CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */,
 				CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */,
 				CEB936672196C39B00DF3860 /* LoginViewModel.swift in Sources */,
+				CEA34FFE219D676000C4AB86 /* SignUpViewModel.swift in Sources */,
+				CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA35000219D692E00C4AB86 /* SignUpViewControllerTests.swift in Sources */,
 				CEB936652196C24700DF3860 /* LoginViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,19 +1,22 @@
 //
-//  ViewController.swift
+//  SignUpViewController.swift
 //  Tellem
 //
-//  Created by User on 10/11/2018.
+//  Created by User on 15/11/2018.
 //  Copyright © 2018 Rubens Neto. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class SignUpViewController: UIViewController {
     
-    var viewModel: LoginViewModel! {
+    
+    var viewModel: SignUpViewModel! {
         didSet{
             emailTextField.placeholder = viewModel.emailPlaceHolder
+            confirmEmailTextField.placeholder = viewModel.confirmEmailPlaceholder
             passwordTextField.placeholder = viewModel.passwordPlacehoder
+            confirmPasswordTextField.placeholder = viewModel.confirmEmailPlaceholder
             haveAnAccountLabel.text = viewModel.haveAnAccountText
             loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
             signUpButton.setTitle(viewModel.signUpButtonTitle, for: .normal)
@@ -26,13 +29,25 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
+    var confirmEmailTextField: TellemTextField = {
+        let textField = TellemTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     var passwordTextField: UITextField = {
         let textField = TellemTextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var loginButton: UIButton = {
+    var confirmPasswordTextField: TellemTextField = {
+        let textField = TellemTextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    var signUpButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .green
         button.layer.cornerRadius = 0.5
@@ -49,30 +64,22 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    var signUpButton: UIButton = {
+    var loginButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.green, for: .normal)
         button.titleLabel?.font = UIFont(name: "System", size: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
         return button
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Login"
+        navigationItem.title = "Sign Up"
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
         edgesForExtendedLayout = []
         setUpView()
-        setUpTextField()
-    }
-    
-    @objc func showSignUp(){
-        let signUpViewModel = SignUpViewModel()
-        let signUpVC = SignUpViewController()
-        signUpVC.viewModel = signUpViewModel
-        navigationController?.pushViewController(signUpVC, animated: true)
     }
     
     func setUpView(){
@@ -85,34 +92,37 @@ class LoginViewController: UIViewController {
         emailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(confirmEmailTextField)
+        confirmEmailTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 12).isActive = true
+        confirmEmailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        confirmEmailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        confirmEmailTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        
         view.addSubview(passwordTextField)
-        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 24).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: confirmEmailTextField.bottomAnchor, constant: 24).isActive = true
         passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-        view.addSubview(loginButton)
-        loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 24).isActive = true
-        loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
-        loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
-        loginButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
-        
-        view.addSubview(haveAnAccountLabel)
-        haveAnAccountLabel.topAnchor.constraint(equalTo: loginButton.bottomAnchor, constant: 60).isActive = true
-        haveAnAccountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(confirmPasswordTextField)
+        confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 12).isActive = true
+        confirmPasswordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        confirmPasswordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         view.addSubview(signUpButton)
-        signUpButton.topAnchor.constraint(equalTo: haveAnAccountLabel.bottomAnchor, constant: 12).isActive = true
-        signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-    }
-}
-
-extension LoginViewController: UITextFieldDelegate {
-    
-    func setUpTextField(){
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        signUpButton.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 24).isActive = true
+        signUpButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        signUpButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        signUpButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
-    }    
-}
+        view.addSubview(haveAnAccountLabel)
+        haveAnAccountLabel.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 60).isActive = true
+        haveAnAccountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
+        view.addSubview(loginButton)
+        loginButton.topAnchor.constraint(equalTo: haveAnAccountLabel.bottomAnchor, constant: 12).isActive = true
+        loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
 
+}

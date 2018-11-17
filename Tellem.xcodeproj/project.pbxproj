@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
 		CE7E6977219AAECF00AF2FFC /* TellemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */; };
 		CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */; };
 		CEA34FFE219D676000C4AB86 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE48CEBB21A0112B0067E30E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTextField.swift; sourceTree = "<group>"; };
 		CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE48CEBA21A010CE0067E30E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CE48CEBB21A0112B0067E30E /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		CE7E6975219AAE9900AF2FFC /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +103,7 @@
 		CEB936432196BFD000DF3860 /* Tellem */ = {
 			isa = PBXGroup;
 			children = (
+				CE48CEBA21A010CE0067E30E /* Extensions */,
 				CEB936442196BFD000DF3860 /* AppDelegate.swift */,
 				CEB936462196BFD000DF3860 /* LoginViewController.swift */,
 				CEB936662196C39B00DF3860 /* LoginViewModel.swift */,
@@ -217,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE7E6977219AAECF00AF2FFC /* TellemTextField.swift in Sources */,
+				CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */,
 				CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */,
 				CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */,
 				CEB936672196C39B00DF3860 /* LoginViewModel.swift in Sources */,

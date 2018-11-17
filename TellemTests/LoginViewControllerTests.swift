@@ -15,7 +15,7 @@ class LoginViewControllerTests: XCTestCase {
 
     override func setUp() {
         loginVC = LoginViewController()
-        _ = loginVC.view
+        loginVC.viewDidLoad()
     }
 
     override func tearDown() {
@@ -38,5 +38,26 @@ class LoginViewControllerTests: XCTestCase {
         let viewModel = loginVC.viewModel
         XCTAssertEqual(loginVC.haveAnAccountLabel.text, viewModel?.haveAnAccountText)
     }
-
+    
+    func testButtonEnabled(){
+        loginVC.emailTextField.text = "example@email.com"
+        loginVC.passwordTextField.text = "password"
+        loginVC.textFieldDidChange(loginVC.emailTextField)
+        loginVC.textFieldDidChange(loginVC.passwordTextField)
+        XCTAssertTrue(loginVC.loginButton.isEnabled)
+        XCTAssertEqual(loginVC.loginButton.alpha, 1.0)
+    }
+    
+    func testButtonDisabled(){
+        loginVC.emailTextField.text = "textExample" // Not a valid email
+        loginVC.passwordTextField.text = "text" // Not a valid password
+        loginVC.textFieldDidChange(loginVC.emailTextField)
+        loginVC.textFieldDidChange(loginVC.passwordTextField)
+        XCTAssertFalse(loginVC.loginButton.isEnabled)
+        XCTAssertEqual(loginVC.loginButton.alpha, 0.5)
+    }
+    
+    func testButtonAlpha(){
+        
+    }
 }

@@ -22,12 +22,19 @@ class LoginViewController: UIViewController {
     
     var emailTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     var passwordTextField: UITextField = {
         let textField = TellemTextField()
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -36,6 +43,8 @@ class LoginViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .green
         button.layer.cornerRadius = 0.5
+        button.isEnabled = false
+        button.alpha = 0.5
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -58,6 +67,9 @@ class LoginViewController: UIViewController {
         return button
     }()
     
+    var validEmail = false
+    var validPassword = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Login"
@@ -66,6 +78,7 @@ class LoginViewController: UIViewController {
         edgesForExtendedLayout = []
         setUpView()
         setUpTextField()
+        
     }
     
     @objc func showSignUp(){
@@ -112,7 +125,38 @@ extension LoginViewController: UITextFieldDelegate {
     func setUpTextField(){
         emailTextField.delegate = self
         passwordTextField.delegate = self
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField){
         
-    }    
+        if textField == emailTextField {
+            validEmail = false
+            if let emailString = emailTextField.text {
+                if emailString.isValidEmail() {
+                    validEmail = true
+                }
+            }
+        }
+        
+        if textField == passwordTextField {
+            validPassword = false
+            if let passwordString = passwordTextField.text {
+                if passwordString.count >= 6 {
+                    validPassword = true
+                }
+            }
+        }
+        toggleSendButton()
+    }
+    
+    func toggleSendButton(){
+        if validEmail && validPassword {
+            loginButton.isEnabled = true
+            loginButton.alpha = 1.0
+        } else {
+            loginButton.isEnabled = false
+            loginButton.alpha = 0.5
+        }
+    }
 }
 

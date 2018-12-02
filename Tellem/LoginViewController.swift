@@ -78,6 +78,7 @@ class LoginViewController: UIViewController {
         edgesForExtendedLayout = []
         setUpView()
         setUpTextField()
+        hideKeyboardWhenTappedAround()
         
     }
     

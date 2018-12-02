@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
+		CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */; };
 		CE7E6977219AAECF00AF2FFC /* TellemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */; };
 		CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */; };
 		CEA34FFE219D676000C4AB86 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		CE48CEBB21A0112B0067E30E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTextField.swift; sourceTree = "<group>"; };
 		CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CEA34FFD219D676000C4AB86 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				CE48CEBB21A0112B0067E30E /* StringExtension.swift */,
+				CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */,
 				CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */,
 				CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */,
+				CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */,
 				CEB936672196C39B00DF3860 /* LoginViewModel.swift in Sources */,
 				CEA34FFE219D676000C4AB86 /* SignUpViewModel.swift in Sources */,
 				CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */,

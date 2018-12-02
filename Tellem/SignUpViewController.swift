@@ -10,39 +10,60 @@ import UIKit
 
 class SignUpViewController: UIViewController {
     
+    var validEmail = false
+    var emailMatches = false
+    var validPassword = false
+    var passwordMatches = false
     
     var viewModel: SignUpViewModel! {
         didSet{
             emailTextField.placeholder = viewModel.emailPlaceHolder
             confirmEmailTextField.placeholder = viewModel.confirmEmailPlaceholder
             passwordTextField.placeholder = viewModel.passwordPlacehoder
-            confirmPasswordTextField.placeholder = viewModel.confirmEmailPlaceholder
+            confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
             haveAnAccountLabel.text = viewModel.haveAnAccountText
             loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
             signUpButton.setTitle(viewModel.signUpButtonTitle, for: .normal)
         }
     }
     
+    //MARK: UI Elements
+    
     var emailTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     var confirmEmailTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     var passwordTextField: UITextField = {
         let textField = TellemTextField()
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
     var confirmPasswordTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.keyboardType = .emailAddress
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -51,6 +72,8 @@ class SignUpViewController: UIViewController {
         let button = UIButton()
         button.backgroundColor = .green
         button.layer.cornerRadius = 0.5
+        button.isEnabled = false
+        button.alpha = 0.5
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -72,6 +95,7 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
+    //MARK: Life Cicle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,7 +104,11 @@ class SignUpViewController: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         edgesForExtendedLayout = []
         setUpView()
+        setUpTextField()
+        hideKeyboardWhenTappedAround()
     }
+    
+    //MARK: Constraints
     
     func setUpView(){
         
@@ -125,4 +153,58 @@ class SignUpViewController: UIViewController {
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func setUpTextField(){
+        emailTextField.delegate = self
+        confirmEmailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmEmailTextField.delegate = self
+    }
+    
+    @objc func textFieldDidChange(_ textField: UITextField){
+        
+        switch textField {
+        case emailTextField:
+            validEmail = false
+            if let emailString = emailTextField.text {
+                if emailString.isValidEmail() {
+                    validEmail = true
+                }
+            }
+        case confirmEmailTextField:
+            emailMatches = false
+            if confirmEmailTextField.text == emailTextField.text {
+                emailMatches = true
+            }
+        case passwordTextField:
+            validPassword = false
+            if let passwordString = passwordTextField.text {
+                if passwordString.count >= 6 {
+                    validPassword = true
+                }
+            }
+        case confirmPasswordTextField:
+            if confirmPasswordTextField.text == passwordTextField.text {
+                passwordMatches = true
+            }
+        default:
+            print("error")
+        }
+        
+        toggleSendButton()
+    }
+    
+    func toggleSendButton(){
+        if validEmail && validPassword
+        && emailMatches && passwordMatches {
+            signUpButton.isEnabled = true
+            signUpButton.alpha = 1.0
+        } else {
+            signUpButton.isEnabled = false
+            signUpButton.alpha = 0.5
+        }
+    }
 }

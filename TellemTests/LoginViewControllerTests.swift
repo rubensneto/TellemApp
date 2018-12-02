@@ -56,8 +56,4 @@ class LoginViewControllerTests: XCTestCase {
         XCTAssertFalse(loginVC.loginButton.isEnabled)
         XCTAssertEqual(loginVC.loginButton.alpha, 0.5)
     }
-    
-    func testButtonAlpha(){
-        
-    }
 }

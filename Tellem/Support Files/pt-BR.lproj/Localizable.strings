@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Tellem
+
+  Created by User on 14/12/2018.
+  Copyright © 2018 Rubens Neto. All rights reserved.
+*/
+
+// LOGIN VIEW CONTROLLER
+
+"email" = "email";
+"password" = "senha";
+"login" = "Login";
+"dontHaveAnAccount" = "Ainda não é registrado?";
+"signUp" = "Registrar";
+
+// SIGN UP VIEW CONTROLLER
+
+"confirmEmail" = "confirmar email";
+"confirmPassword" = "confirmar senha";
+"alreadyHaveAnAccount" = "Já é registrado?";

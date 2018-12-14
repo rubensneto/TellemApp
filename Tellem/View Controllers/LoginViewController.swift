@@ -10,18 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    var viewModel: LoginViewModel! {
-        didSet{
-            emailTextField.placeholder = viewModel.emailPlaceHolder
-            passwordTextField.placeholder = viewModel.passwordPlacehoder
-            haveAnAccountLabel.text = viewModel.haveAnAccountText
-            loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
-            signUpButton.setTitle(viewModel.signUpButtonTitle, for: .normal)
-        }
-    }
     
     var emailTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.placeholder = NSLocalizedString("email", comment: "")
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
@@ -32,6 +24,7 @@ class LoginViewController: UIViewController {
     
     var passwordTextField: UITextField = {
         let textField = TellemTextField()
+        textField.placeholder = NSLocalizedString("password", comment: "")
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -41,6 +34,7 @@ class LoginViewController: UIViewController {
     
     var loginButton: UIButton = {
         let button = UIButton()
+        button.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
         button.backgroundColor = .green
         button.layer.cornerRadius = 0.5
         button.isEnabled = false
@@ -51,6 +45,7 @@ class LoginViewController: UIViewController {
     
     var haveAnAccountLabel: UILabel = {
         var label = UILabel()
+        label.text = NSLocalizedString("dontHaveAnAccount", comment: "")
         label.textColor = .lightGray
         label.textAlignment = .center
         label.font = UIFont(name: "System", size: 12)
@@ -60,6 +55,7 @@ class LoginViewController: UIViewController {
     
     var signUpButton: UIButton = {
         let button = UIButton()
+        button.setTitle(NSLocalizedString("signUp", comment: ""), for: .normal)
         button.setTitleColor(.green, for: .normal)
         button.titleLabel?.font = UIFont(name: "System", size: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -69,6 +65,8 @@ class LoginViewController: UIViewController {
     
     var validEmail = false
     var validPassword = false
+    
+    //MARK: VIEW CYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -82,12 +80,16 @@ class LoginViewController: UIViewController {
         
     }
     
+    //MARK: USER ACTIONS
+    
     @objc func showSignUp(){
         let signUpViewModel = SignUpViewModel()
         let signUpVC = SignUpViewController()
         signUpVC.viewModel = signUpViewModel
         navigationController?.pushViewController(signUpVC, animated: true)
     }
+    
+    //MARK: UI SET UP
     
     func setUpView(){
         

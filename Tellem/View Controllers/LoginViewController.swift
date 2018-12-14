@@ -25,6 +25,7 @@ class LoginViewController: UIViewController {
     var passwordTextField: UITextField = {
         let textField = TellemTextField()
         textField.placeholder = NSLocalizedString("password", comment: "")
+        textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -39,9 +40,14 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 0.5
         button.isEnabled = false
         button.alpha = 0.5
+        button.addTarget(self, action: #selector(doLogin), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    @objc func doLogin(){
+        navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
     
     var haveAnAccountLabel: UILabel = {
         var label = UILabel()
@@ -83,9 +89,7 @@ class LoginViewController: UIViewController {
     //MARK: USER ACTIONS
     
     @objc func showSignUp(){
-        let signUpViewModel = SignUpViewModel()
         let signUpVC = SignUpViewController()
-        signUpVC.viewModel = signUpViewModel
         navigationController?.pushViewController(signUpVC, animated: true)
     }
     

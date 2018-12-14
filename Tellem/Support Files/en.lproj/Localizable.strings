@@ -16,6 +16,6 @@
 
 // SIGN UP VIEW CONTROLLER
 
-"confirmEmail" = "Confirm email";
-"confirmPassword" = "Confirm password";
+"confirmEmail" = "confirm email";
+"confirmPassword" = "confirm password";
 "alreadyHaveAnAccount" = "Already have an account?";

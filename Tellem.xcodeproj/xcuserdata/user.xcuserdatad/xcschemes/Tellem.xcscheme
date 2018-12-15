@@ -39,6 +39,16 @@
                ReferencedContainer = "container:Tellem.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CED1452121C53933005E72E2"
+               BuildableName = "TellemUITests.xctest"
+               BlueprintName = "TellemUITests"
+               ReferencedContainer = "container:Tellem.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

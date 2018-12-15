@@ -22,20 +22,74 @@ class LoginViewControllerTests: XCTestCase {
         loginVC = nil
     }
     
-    func testButtonEnabled(){
+    func testThatEmailWarningApperars(){
+        // GIVEN
+        loginVC.emailTextField.text = "invalid@email.c"
+        // WHEN
+        loginVC.textFieldDidChange(loginVC.emailTextField)
+        loginVC.textFieldDidEndEditing(loginVC.emailTextField)
+        // THEN
+        let warning = loginVC.emailWarningLabel.text
+        let localizedString = NSLocalizedString("invalidEmail", comment: "")
+        XCTAssertEqual(warning, localizedString)
+    }
+    
+    func testThatEmailWarningDisapperars(){
+        // GIVEN
+        loginVC.emailWarningLabel.text = NSLocalizedString("invalidEmail", comment: "")
+        loginVC.emailTextField.text = "valid@email.com"
+        // WHEN
+        loginVC.textFieldDidChange(loginVC.emailTextField)
+        loginVC.textFieldDidEndEditing(loginVC.emailTextField)
+        // THEN
+        let warning = loginVC.emailWarningLabel.text
+        XCTAssertEqual(warning, "")
+    }
+    
+    func testThatPasswordoWarningAppears(){
+        // GIVEN
+        loginVC.passwordTextField.text = "12345"
+        // WHEN
+        loginVC.textFieldDidChange(loginVC.passwordTextField)
+        loginVC.textFieldDidEndEditing(loginVC.passwordTextField)
+        // THEN
+        let warning = loginVC.passwordWarningLabel.text
+        let localizedString = NSLocalizedString("invalidPassword", comment: "")
+        XCTAssertEqual(warning, localizedString)
+    }
+    
+    func testThatPasswordWarningDisapperars(){
+        // GIVEN
+        loginVC.passwordWarningLabel.text = NSLocalizedString("invalidPassword", comment: "")
+        loginVC.passwordTextField.text = "123456"
+        // WHEN
+        loginVC.textFieldDidChange(loginVC.passwordTextField)
+        loginVC.textFieldDidEndEditing(loginVC.passwordTextField)
+        // THEN
+        let warning = loginVC.passwordWarningLabel.text
+        XCTAssertEqual(warning, "")
+    }
+    
+    func testThatLoginButtonEnables(){
+        // GIVEN
         loginVC.emailTextField.text = "example@email.com"
         loginVC.passwordTextField.text = "password"
+        // WHEN
         loginVC.textFieldDidChange(loginVC.emailTextField)
         loginVC.textFieldDidChange(loginVC.passwordTextField)
+        // THEN
         XCTAssertTrue(loginVC.loginButton.isEnabled)
         XCTAssertEqual(loginVC.loginButton.alpha, 1.0)
     }
     
-    func testButtonDisabled(){
-        loginVC.emailTextField.text = "textExample" // Not a valid email
-        loginVC.passwordTextField.text = "text" // Not a valid password
+    func testThatLoginButtonDisables(){
+        // GIVEN
+        loginVC.emailTextField.text = "invalid@email.c"
+        loginVC.passwordTextField.text = "text"
+        // WHEN
         loginVC.textFieldDidChange(loginVC.emailTextField)
         loginVC.textFieldDidChange(loginVC.passwordTextField)
+        // THEN 
         XCTAssertFalse(loginVC.loginButton.isEnabled)
         XCTAssertEqual(loginVC.loginButton.alpha, 0.5)
     }

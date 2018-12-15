@@ -28,5 +28,14 @@ class StringExtensionTests: XCTestCase {
         // THEN
         XCTAssertTrue(validationResult)
     }
+    
+    func testThatLocalizationReturnsTheRightValue(){
+        // GIVEN
+        let key = "dontHaveAnAccount"
+        // WHEN
+        let value = key.localize()
+        // THEN
+        XCTAssertEqual(value, "Don't have an account yet?")
+    }
 
 }

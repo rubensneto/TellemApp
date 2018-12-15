@@ -14,62 +14,73 @@ class SignUpViewController: UIViewController {
     var emailMatches = false
     var validPassword = false
     var passwordMatches = false
-    
-    var viewModel: SignUpViewModel! {
-        didSet{
-            emailTextField.placeholder = viewModel.emailPlaceHolder
-            confirmEmailTextField.placeholder = viewModel.confirmEmailPlaceholder
-            passwordTextField.placeholder = viewModel.passwordPlacehoder
-            confirmPasswordTextField.placeholder = viewModel.confirmPasswordPlaceholder
-            haveAnAccountLabel.text = viewModel.haveAnAccountText
-            loginButton.setTitle(viewModel.loginButtonTitle, for: .normal)
-            signUpButton.setTitle(viewModel.signUpButtonTitle, for: .normal)
-        }
-    }
+
     
     //MARK: UI Elements
     
-    var emailTextField: TellemTextField = {
+    let emailTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.placeholder = LocalizedString.email
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var confirmEmailTextField: TellemTextField = {
+    let emailWarningLabel: TellemWarningLabel = {
+        let label = TellemWarningLabel()
+        return label
+    }()
+    
+    let confirmEmailTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.placeholder = LocalizedString.confirmEmail
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var passwordTextField: UITextField = {
+    let emailMatchWarningLabel: TellemWarningLabel = {
+        let label = TellemWarningLabel()
+        return label
+    }()
+    
+    let passwordTextField: TellemTextField = {
         let textField = TellemTextField()
+        textField.isSecureTextEntry = true
+        textField.placeholder = LocalizedString.password
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var confirmPasswordTextField: TellemTextField = {
+    let passwordWarningLabel: TellemWarningLabel = {
+        let label = TellemWarningLabel()
+        return label
+    }()
+    
+    let confirmPasswordTextField: TellemTextField = {
         let textField = TellemTextField()
-        textField.keyboardType = .emailAddress
+        textField.isSecureTextEntry = true
+        textField.placeholder = LocalizedString.confirmPassword
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var signUpButton: UIButton = {
+    let passwordMatchWarningLabel: TellemWarningLabel = {
+        let label = TellemWarningLabel()
+        return label
+    }()
+    
+    let signUpButton: UIButton = {
         let button = UIButton()
+        button.setTitle(LocalizedString.signUp , for: .normal)
         button.backgroundColor = .green
         button.layer.cornerRadius = 0.5
         button.isEnabled = false
@@ -78,8 +89,9 @@ class SignUpViewController: UIViewController {
         return button
     }()
     
-    var haveAnAccountLabel: UILabel = {
+    let haveAnAccountLabel: UILabel = {
         var label = UILabel()
+        label.text = LocalizedString.alreadyHaveAnAccount
         label.textColor = .lightGray
         label.textAlignment = .center
         label.font = UIFont(name: "System", size: 12)
@@ -87,8 +99,9 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
-    var loginButton: UIButton = {
+    let loginButton: UIButton = {
         let button = UIButton()
+        button.setTitle(LocalizedString.login, for: .normal)
         button.setTitleColor(.green, for: .normal)
         button.titleLabel?.font = UIFont(name: "System", size: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -120,26 +133,46 @@ class SignUpViewController: UIViewController {
         emailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(emailWarningLabel)
+        emailWarningLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 4).isActive = true
+        emailWarningLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        emailWarningLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        
         view.addSubview(confirmEmailTextField)
-        confirmEmailTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 12).isActive = true
+        confirmEmailTextField.topAnchor.constraint(equalTo: emailWarningLabel.bottomAnchor, constant: 12).isActive = true
         confirmEmailTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         confirmEmailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         confirmEmailTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(emailMatchWarningLabel)
+        emailMatchWarningLabel.topAnchor.constraint(equalTo: confirmEmailTextField.bottomAnchor, constant: 4).isActive = true
+        emailMatchWarningLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        emailMatchWarningLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        
         view.addSubview(passwordTextField)
-        passwordTextField.topAnchor.constraint(equalTo: confirmEmailTextField.bottomAnchor, constant: 24).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailMatchWarningLabel.bottomAnchor, constant: 24).isActive = true
         passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(passwordWarningLabel)
+        passwordWarningLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 4).isActive = true
+        passwordWarningLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        passwordWarningLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        
         view.addSubview(confirmPasswordTextField)
-        confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 12).isActive = true
+        confirmPasswordTextField.topAnchor.constraint(equalTo: passwordWarningLabel.bottomAnchor, constant: 12).isActive = true
         confirmPasswordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         confirmPasswordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         confirmPasswordTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(passwordMatchWarningLabel)
+        passwordMatchWarningLabel.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 4).isActive = true
+        passwordMatchWarningLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        passwordMatchWarningLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        
         view.addSubview(signUpButton)
-        signUpButton.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor, constant: 24).isActive = true
+        signUpButton.topAnchor.constraint(equalTo: passwordMatchWarningLabel.bottomAnchor, constant: 24).isActive = true
         signUpButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         signUpButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         signUpButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -161,7 +194,45 @@ extension SignUpViewController: UITextFieldDelegate {
         emailTextField.delegate = self
         confirmEmailTextField.delegate = self
         passwordTextField.delegate = self
-        confirmEmailTextField.delegate = self
+        confirmPasswordTextField.delegate = self
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case emailTextField:
+            validEmail = false
+            if let emailString = emailTextField.text {
+                if emailString.isValidEmail() {
+                    validEmail = true
+                } else if emailString.count > 0 {
+                    emailWarningLabel.text = LocalizedString.invalidEmailWarning
+                }
+            }
+        case confirmEmailTextField:
+            emailMatches = false
+            if confirmEmailTextField.text == emailTextField.text {
+                emailMatches = true
+            } else if validEmail {
+                emailMatchWarningLabel.text = LocalizedString.emailsDontMatchWarning
+            }
+        case passwordTextField:
+            validPassword = false
+            if let passwordString = passwordTextField.text {
+                if passwordString.count >= 6 {
+                    validPassword = true
+                } else if passwordString.count > 0 {
+                    passwordWarningLabel.text = LocalizedString.invalidPasswordWarning
+                }
+            }
+        case confirmPasswordTextField:
+            if confirmPasswordTextField.text == passwordTextField.text {
+                passwordMatches = true
+            } else if validPassword {
+                passwordMatchWarningLabel.text = LocalizedString.passwordsDontMatchWarning
+            }
+        default:
+            print("error")
+        }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField){
@@ -172,23 +243,27 @@ extension SignUpViewController: UITextFieldDelegate {
             if let emailString = emailTextField.text {
                 if emailString.isValidEmail() {
                     validEmail = true
+                    emailWarningLabel.text = ""
                 }
             }
         case confirmEmailTextField:
             emailMatches = false
             if confirmEmailTextField.text == emailTextField.text {
                 emailMatches = true
+                emailMatchWarningLabel.text = ""
             }
         case passwordTextField:
             validPassword = false
             if let passwordString = passwordTextField.text {
                 if passwordString.count >= 6 {
                     validPassword = true
+                    passwordWarningLabel.text = ""
                 }
             }
         case confirmPasswordTextField:
             if confirmPasswordTextField.text == passwordTextField.text {
                 passwordMatches = true
+                passwordMatchWarningLabel.text = ""
             }
         default:
             print("error")

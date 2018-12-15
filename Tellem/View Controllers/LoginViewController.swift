@@ -10,31 +10,39 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    
-    var emailTextField: TellemTextField = {
+    let emailTextField: TellemTextField = {
         let textField = TellemTextField()
-        textField.placeholder = NSLocalizedString("email", comment: "")
+        textField.placeholder = LocalizedString.email
         textField.keyboardType = .emailAddress
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var passwordTextField: UITextField = {
+    let emailWarningLabel: TellemWarningLabel = {
+        let label = TellemWarningLabel()
+        return label
+    }()
+    
+    let passwordTextField: UITextField = {
         let textField = TellemTextField()
-        textField.placeholder = NSLocalizedString("password", comment: "")
+        textField.placeholder = LocalizedString.password
+        textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    var loginButton: UIButton = {
+    let passwordWarningLabel: TellemWarningLabel = {
+        let label = TellemWarningLabel()
+        return label
+    }()
+    
+    let loginButton: UIButton = {
         let button = UIButton()
-        button.setTitle(NSLocalizedString("login", comment: ""), for: .normal)
+        button.setTitle(LocalizedString.login, for: .normal)
         button.backgroundColor = .green
         button.layer.cornerRadius = 0.5
         button.isEnabled = false
@@ -43,9 +51,10 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    var haveAnAccountLabel: UILabel = {
+    let haveAnAccountLabel: UILabel = {
         var label = UILabel()
-        label.text = NSLocalizedString("dontHaveAnAccount", comment: "")
+        label.text = LocalizedString.dontHaveAnAccount
+        label.accessibilityIdentifier = "haveAnAccount"
         label.textColor = .lightGray
         label.textAlignment = .center
         label.font = UIFont(name: "System", size: 12)
@@ -53,9 +62,9 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    var signUpButton: UIButton = {
+    let signUpButton: UIButton = {
         let button = UIButton()
-        button.setTitle(NSLocalizedString("signUp", comment: ""), for: .normal)
+        button.setTitle(LocalizedString.signUp, for: .normal)
         button.setTitleColor(.green, for: .normal)
         button.titleLabel?.font = UIFont(name: "System", size: 12)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,8 +72,8 @@ class LoginViewController: UIViewController {
         return button
     }()
     
-    var validEmail = false
-    var validPassword = false
+    var isValidEmail = false
+    var isValidPassword = false
     
     //MARK: VIEW CYCLE
     
@@ -83,10 +92,7 @@ class LoginViewController: UIViewController {
     //MARK: USER ACTIONS
     
     @objc func showSignUp(){
-        let signUpViewModel = SignUpViewModel()
-        let signUpVC = SignUpViewController()
-        signUpVC.viewModel = signUpViewModel
-        navigationController?.pushViewController(signUpVC, animated: true)
+        navigationController?.pushViewController(SignUpViewController(), animated: true)
     }
     
     //MARK: UI SET UP
@@ -101,14 +107,24 @@ class LoginViewController: UIViewController {
         emailTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         emailTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(emailWarningLabel)
+        emailWarningLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 4).isActive = true
+        emailWarningLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        emailWarningLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        
         view.addSubview(passwordTextField)
-        passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 24).isActive = true
+        passwordTextField.topAnchor.constraint(equalTo: emailWarningLabel.bottomAnchor, constant: 24).isActive = true
         passwordTextField.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         passwordTextField.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         passwordTextField.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
+        view.addSubview(passwordWarningLabel)
+        passwordWarningLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 4).isActive = true
+        passwordWarningLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
+        passwordWarningLabel.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
+        
         view.addSubview(loginButton)
-        loginButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 24).isActive = true
+        loginButton.topAnchor.constraint(equalTo: passwordWarningLabel.bottomAnchor, constant: 24).isActive = true
         loginButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 24).isActive = true
         loginButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -24).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
@@ -130,22 +146,38 @@ extension LoginViewController: UITextFieldDelegate {
         passwordTextField.delegate = self
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == emailTextField {
+            if !isValidEmail {
+                emailWarningLabel.text = LocalizedString.invalidEmailWarning
+            }
+        }
+        
+        if textField == passwordTextField {
+            if !isValidPassword {
+                passwordWarningLabel.text = LocalizedString.invalidPasswordWarning
+            }
+        }
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField){
         
         if textField == emailTextField {
-            validEmail = false
+            isValidEmail = false
             if let emailString = emailTextField.text {
                 if emailString.isValidEmail() {
-                    validEmail = true
+                    isValidEmail = true
+                    emailWarningLabel.text = ""
                 }
             }
         }
         
         if textField == passwordTextField {
-            validPassword = false
+            isValidPassword = false
             if let passwordString = passwordTextField.text {
                 if passwordString.count >= 6 {
-                    validPassword = true
+                    isValidPassword = true
+                    passwordWarningLabel.text = ""
                 }
             }
         }
@@ -153,7 +185,7 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func toggleSendButton(){
-        if validEmail && validPassword {
+        if isValidEmail && isValidPassword {
             loginButton.isEnabled = true
             loginButton.alpha = 1.0
         } else {

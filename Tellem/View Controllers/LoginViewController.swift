@@ -27,6 +27,9 @@ class LoginViewController: UIViewController {
     
     let passwordTextField: UITextField = {
         let textField = TellemTextField()
+        if #available(iOS 12, *) {
+            textField.textContentType = .oneTimeCode
+        }
         textField.placeholder = LocalizedString.password
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
@@ -40,14 +43,10 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    let loginButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(LocalizedString.login, for: .normal)
-        button.backgroundColor = .green
-        button.layer.cornerRadius = 0.5
+    let loginButton: TellemButton = {
+        let button = TellemButton(title: LocalizedString.login)
         button.isEnabled = false
         button.alpha = 0.5
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -62,12 +61,8 @@ class LoginViewController: UIViewController {
         return label
     }()
     
-    let signUpButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(LocalizedString.signUp, for: .normal)
-        button.setTitleColor(.green, for: .normal)
-        button.titleLabel?.font = UIFont(name: "System", size: 12)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    let signUpButton: TellemTextButton = {
+        let button = TellemTextButton(title: LocalizedString.signUp)
         button.addTarget(self, action: #selector(showSignUp), for: .touchUpInside)
         return button
     }()

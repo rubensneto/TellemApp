@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE2E4E3321C6596700F6E577 /* TellemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4E3221C6596700F6E577 /* TellemButton.swift */; };
+		CE2E4E3521C65A8500F6E577 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4E3421C65A8500F6E577 /* UIColorExtension.swift */; };
+		CE2E4E3821C65E8B00F6E577 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4E3721C65E8B00F6E577 /* UIFontExtension.swift */; };
+		CE2E4E3A21C6616600F6E577 /* TellemTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4E3921C6616600F6E577 /* TellemTextButton.swift */; };
+		CE2E4E3C21C6700D00F6E577 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
+		CE2E4E4021C684EF00F6E577 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1452F21C57D1B005E72E2 /* LocalizedString.swift */; };
+		CE2E4E4321C6873C00F6E577 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
+		CE2E4E4521C69BA400F6E577 /* BaseUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2E4E4421C69BA400F6E577 /* BaseUITest.swift */; };
 		CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
 		CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */; };
 		CE7E6977219AAECF00AF2FFC /* TellemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */; };
@@ -20,13 +28,10 @@
 		CED1451021C387C6005E72E2 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1450F21C387C6005E72E2 /* StringExtensionTests.swift */; };
 		CED1451821C391C8005E72E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
 		CED1452521C53934005E72E2 /* LoginViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1452421C53934005E72E2 /* LoginViewControllerUITests.swift */; };
-		CED1452C21C5431A005E72E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
-		CED1452D21C54330005E72E2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
 		CED1452E21C544FD005E72E2 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
 		CED1453021C57D1B005E72E2 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1452F21C57D1B005E72E2 /* LocalizedString.swift */; };
 		CED1453221C5806A005E72E2 /* TellemWarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1453121C5806A005E72E2 /* TellemWarningLabel.swift */; };
 		CED1453421C5929C005E72E2 /* SignUpViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1453321C5929C005E72E2 /* SignUpViewControllerUITests.swift */; };
-		CED1453521C59593005E72E2 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1452F21C57D1B005E72E2 /* LocalizedString.swift */; };
 		CED1453621C59594005E72E2 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1452F21C57D1B005E72E2 /* LocalizedString.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +53,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE2E4E3221C6596700F6E577 /* TellemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemButton.swift; sourceTree = "<group>"; };
+		CE2E4E3421C65A8500F6E577 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		CE2E4E3721C65E8B00F6E577 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		CE2E4E3921C6616600F6E577 /* TellemTextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTextButton.swift; sourceTree = "<group>"; };
+		CE2E4E4421C69BA400F6E577 /* BaseUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITest.swift; sourceTree = "<group>"; };
 		CE48CEBB21A0112B0067E30E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTextField.swift; sourceTree = "<group>"; };
@@ -103,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				CE48CEBB21A0112B0067E30E /* StringExtension.swift */,
+				CE2E4E3421C65A8500F6E577 /* UIColorExtension.swift */,
+				CE2E4E3721C65E8B00F6E577 /* UIFontExtension.swift */,
 				CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
@@ -111,6 +123,8 @@
 		CE7E6975219AAE9900AF2FFC /* UI Components */ = {
 			isa = PBXGroup;
 			children = (
+				CE2E4E3221C6596700F6E577 /* TellemButton.swift */,
+				CE2E4E3921C6616600F6E577 /* TellemTextButton.swift */,
 				CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */,
 				CED1453121C5806A005E72E2 /* TellemWarningLabel.swift */,
 			);
@@ -200,6 +214,7 @@
 		CED1452321C53934005E72E2 /* TellemUITests */ = {
 			isa = PBXGroup;
 			children = (
+				CE2E4E4421C69BA400F6E577 /* BaseUITest.swift */,
 				CED1452421C53934005E72E2 /* LoginViewControllerUITests.swift */,
 				CED1453321C5929C005E72E2 /* SignUpViewControllerUITests.swift */,
 				CED1452621C53934005E72E2 /* Info.plist */,
@@ -322,6 +337,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2E4E3C21C6700D00F6E577 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +345,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED1452C21C5431A005E72E2 /* Localizable.strings in Resources */,
+				CE2E4E4321C6873C00F6E577 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,14 +356,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2E4E3321C6596700F6E577 /* TellemButton.swift in Sources */,
 				CE7E6977219AAECF00AF2FFC /* TellemTextField.swift in Sources */,
 				CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */,
 				CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */,
 				CED1453021C57D1B005E72E2 /* LocalizedString.swift in Sources */,
+				CE2E4E3A21C6616600F6E577 /* TellemTextButton.swift in Sources */,
 				CED1453221C5806A005E72E2 /* TellemWarningLabel.swift in Sources */,
 				CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */,
+				CE2E4E3521C65A8500F6E577 /* UIColorExtension.swift in Sources */,
 				CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */,
 				CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */,
+				CE2E4E3821C65E8B00F6E577 /* UIFontExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,9 +387,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED1452D21C54330005E72E2 /* StringExtension.swift in Sources */,
+				CE2E4E4521C69BA400F6E577 /* BaseUITest.swift in Sources */,
 				CED1452521C53934005E72E2 /* LoginViewControllerUITests.swift in Sources */,
-				CED1453521C59593005E72E2 /* LocalizedString.swift in Sources */,
+				CE2E4E4021C684EF00F6E577 /* LocalizedString.swift in Sources */,
 				CED1453421C5929C005E72E2 /* SignUpViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

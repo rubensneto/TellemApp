@@ -30,13 +30,13 @@ class LoginViewControllerTests: XCTestCase {
         loginVC.textFieldDidEndEditing(loginVC.emailTextField)
         // THEN
         let warning = loginVC.emailWarningLabel.text
-        let localizedString = NSLocalizedString("invalidEmail", comment: "")
+        let localizedString = LocalizedString.invalidEmailWarning
         XCTAssertEqual(warning, localizedString)
     }
     
     func testThatEmailWarningDisapperars(){
         // GIVEN
-        loginVC.emailWarningLabel.text = NSLocalizedString("invalidEmail", comment: "")
+        loginVC.emailWarningLabel.text = LocalizedString.invalidEmailWarning
         loginVC.emailTextField.text = "valid@email.com"
         // WHEN
         loginVC.textFieldDidChange(loginVC.emailTextField)
@@ -54,13 +54,13 @@ class LoginViewControllerTests: XCTestCase {
         loginVC.textFieldDidEndEditing(loginVC.passwordTextField)
         // THEN
         let warning = loginVC.passwordWarningLabel.text
-        let localizedString = NSLocalizedString("invalidPassword", comment: "")
+        let localizedString = LocalizedString.invalidPasswordWarning
         XCTAssertEqual(warning, localizedString)
     }
     
     func testThatPasswordWarningDisapperars(){
         // GIVEN
-        loginVC.passwordWarningLabel.text = NSLocalizedString("invalidPassword", comment: "")
+        loginVC.passwordWarningLabel.text = LocalizedString.invalidPasswordWarning
         loginVC.passwordTextField.text = "123456"
         // WHEN
         loginVC.textFieldDidChange(loginVC.passwordTextField)
@@ -92,5 +92,11 @@ class LoginViewControllerTests: XCTestCase {
         // THEN 
         XCTAssertFalse(loginVC.loginButton.isEnabled)
         XCTAssertEqual(loginVC.loginButton.alpha, 0.5)
+    }
+    
+    
+    func testLocalizedString(){
+        let string = LocalizedString.signUp
+        XCTAssertEqual(string, "Sign up")
     }
 }

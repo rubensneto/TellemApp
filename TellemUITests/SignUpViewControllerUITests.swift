@@ -8,28 +8,48 @@
 
 import XCTest
 
-class SignUpViewControllerUITests: XCTestCase {
+class SignUpViewControllerUITests: BaseUITest {
     
-    var app: XCUIApplication!
+    //TODO: Find out why Unit Test Bundle has direct access to localized string and UI Test Bundle not even that the localizable file is included in all bundles of the project
+    
+    private var emailTextField: XCUIElement {
+        return app.textFields[localizedString(LocalizedString.email)]
+    }
+    private var confirmEmailTextField: XCUIElement {
+        return app.textFields[localizedString(LocalizedString.confirmEmail)]
+    }
+    private var passwordTextField: XCUIElement {
+        return app.secureTextFields[localizedString(LocalizedString.password)]
+    }
+    private var confirmPasswordTextField: XCUIElement {
+        return app.secureTextFields[localizedString(LocalizedString.confirmPassword)]
+    }
+    private var signUpButton: XCUIElement {
+        return app.buttons[localizedString(LocalizedString.signUp).uppercased()]
+    }
+    private var haveAnAccountLabel: XCUIElement {
+        return app.staticTexts[localizedString(LocalizedString.alreadyHaveAnAccount)]
+    }
+    private var loginButton: XCUIElement {
+        return app.buttons[localizedString(LocalizedString.login).uppercased()]
+    }
 
     override func setUp() {
-        continueAfterFailure = false
-        app = XCUIApplication()
-        app.launch()
+        super.setUp()
     }
 
     override func tearDown() {
-        app = nil
+        super.tearDown()
     }
 
     func testThatUIElementsExist(){
-        app.buttons[LocalizedString.signUp].tap()
-        XCTAssertTrue(app.textFields[LocalizedString.email].exists)
-        XCTAssertTrue(app.textFields[LocalizedString.confirmEmail].exists)
-        XCTAssertTrue(app.secureTextFields[LocalizedString.password].exists)
-        XCTAssertTrue(app.secureTextFields[LocalizedString.confirmPassword].exists)
-        XCTAssertTrue(app.buttons[LocalizedString.signUp].exists)
-        XCTAssertTrue(app.staticTexts[LocalizedString.alreadyHaveAnAccount.localize()].exists)
-        XCTAssertTrue(app.buttons[LocalizedString.login].exists)
+        app.buttons[localizedString(LocalizedString.signUp).uppercased()].tap()
+        XCTAssertTrue(emailTextField.exists)
+        XCTAssertTrue(confirmEmailTextField.exists)
+        XCTAssertTrue(passwordTextField.exists)
+        XCTAssertTrue(confirmPasswordTextField.exists)
+        XCTAssertTrue(signUpButton.exists)
+        XCTAssertTrue(haveAnAccountLabel.exists)
+        XCTAssertTrue(loginButton.exists)
     }
 }

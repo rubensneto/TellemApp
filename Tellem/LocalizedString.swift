@@ -13,16 +13,16 @@
 import Foundation
 
 struct LocalizedString {
-    static let email = "email".localize()
-    static let password = "password".localize()
-    static let login = "login".localize()
-    static let dontHaveAnAccount = "dontHaveAnAccount".localize()
-    static let signUp = "signUp".localize()
-    static let invalidEmailWarning = "invalidEmailWarning".localize()
-    static let invalidPasswordWarning = "invalidPasswordWarning".localize()
-    static let confirmEmail = "confirmEmail".localize()
-    static let confirmPassword = "confirmPassword".localize()
-    static let alreadyHaveAnAccount = "alreadyHaveAnAccount".localize()
-    static let emailsDontMatchWarning = "emailsDontMatchWarning".localize()
-    static let passwordsDontMatchWarning = "passwordsDontMatchWarning".localize()
+    static let email = NSLocalizedString("email", comment: "")
+    static let password = NSLocalizedString("password", comment: "")
+    static let login = NSLocalizedString("login", comment: "")
+    static let dontHaveAnAccount = NSLocalizedString("dontHaveAnAccount", comment: "")
+    static let signUp = NSLocalizedString("signUp", comment: "")
+    static let invalidEmailWarning = NSLocalizedString("invalidEmailWarning", comment: "")
+    static let invalidPasswordWarning = NSLocalizedString("invalidPasswordWarning", comment: "")
+    static let confirmEmail = NSLocalizedString("confirmEmail", comment: "")
+    static let confirmPassword = NSLocalizedString("confirmPassword", comment: "")
+    static let alreadyHaveAnAccount = NSLocalizedString("alreadyHaveAnAccount", comment: "")
+    static let emailsDontMatchWarning = NSLocalizedString("emailsDontMatchWarning", comment: "")
+    static let passwordsDontMatchWarning = NSLocalizedString("passwordsDontMatchWarning", comment: "")
 }

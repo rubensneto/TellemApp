@@ -78,14 +78,10 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
-    let signUpButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(LocalizedString.signUp , for: .normal)
-        button.backgroundColor = .green
-        button.layer.cornerRadius = 0.5
+    let signUpButton: TellemButton = {
+        let button = TellemButton(title: LocalizedString.signUp)
         button.isEnabled = false
         button.alpha = 0.5
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
@@ -99,12 +95,9 @@ class SignUpViewController: UIViewController {
         return label
     }()
     
-    let loginButton: UIButton = {
-        let button = UIButton()
-        button.setTitle(LocalizedString.login, for: .normal)
-        button.setTitleColor(.green, for: .normal)
-        button.titleLabel?.font = UIFont(name: "System", size: 12)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    let loginButton: TellemTextButton = {
+        let button = TellemTextButton(title: LocalizedString.login)
+        button.addTarget(self, action: #selector(backToLogin), for: .touchUpInside)
         return button
     }()
     
@@ -112,13 +105,18 @@ class SignUpViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Sign Up"
+        navigationItem.title = LocalizedString.signUp
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isTranslucent = false
         edgesForExtendedLayout = []
         setUpView()
         setUpTextField()
         hideKeyboardWhenTappedAround()
+    }
+    
+    //MARK: USER ACTIONS
+    @objc func backToLogin(){
+        navigationController?.popViewController(animated: true)
     }
     
     //MARK: Constraints
@@ -178,12 +176,13 @@ class SignUpViewController: UIViewController {
         signUpButton.heightAnchor.constraint(equalToConstant: 40).isActive = true
         
         view.addSubview(haveAnAccountLabel)
-        haveAnAccountLabel.topAnchor.constraint(equalTo: signUpButton.bottomAnchor, constant: 60).isActive = true
+        haveAnAccountLabel.topAnchor.constraint(greaterThanOrEqualTo: signUpButton.bottomAnchor, constant: 24).isActive = true
         haveAnAccountLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         view.addSubview(loginButton)
         loginButton.topAnchor.constraint(equalTo: haveAnAccountLabel.bottomAnchor, constant: 12).isActive = true
         loginButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        loginButton.bottomAnchor.constraint(greaterThanOrEqualTo: view.bottomAnchor, constant: -24).isActive = true
     }
 
 }
@@ -198,75 +197,55 @@ extension SignUpViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        switch textField {
-        case emailTextField:
-            validEmail = false
-            if let emailString = emailTextField.text {
-                if emailString.isValidEmail() {
-                    validEmail = true
-                } else if emailString.count > 0 {
-                    emailWarningLabel.text = LocalizedString.invalidEmailWarning
-                }
-            }
-        case confirmEmailTextField:
-            emailMatches = false
-            if confirmEmailTextField.text == emailTextField.text {
-                emailMatches = true
-            } else if validEmail {
+        
+        // Only one warning should be displayed at a time.
+        
+        if let emailString = emailTextField.text, let confirmEmailString = confirmEmailTextField.text,
+            let passwordString = passwordTextField.text, let confirmPasswordString = confirmPasswordTextField.text {
+            emailWarningLabel.text = ""
+            emailMatchWarningLabel.text = ""
+            passwordWarningLabel.text = ""
+            passwordMatchWarningLabel.text = ""
+            if !validEmail && emailString.count > 0 {
+                emailWarningLabel.text = LocalizedString.invalidEmailWarning
+            } else if !emailMatches && confirmEmailString.count > 0 {
                 emailMatchWarningLabel.text = LocalizedString.emailsDontMatchWarning
-            }
-        case passwordTextField:
-            validPassword = false
-            if let passwordString = passwordTextField.text {
-                if passwordString.count >= 6 {
-                    validPassword = true
-                } else if passwordString.count > 0 {
-                    passwordWarningLabel.text = LocalizedString.invalidPasswordWarning
-                }
-            }
-        case confirmPasswordTextField:
-            if confirmPasswordTextField.text == passwordTextField.text {
-                passwordMatches = true
-            } else if validPassword {
+            } else if !validPassword && passwordString.count > 0 {
+                passwordWarningLabel.text = LocalizedString.invalidPasswordWarning
+            } else if !passwordMatches && confirmPasswordString.count > 0 {
                 passwordMatchWarningLabel.text = LocalizedString.passwordsDontMatchWarning
             }
-        default:
-            print("error")
         }
     }
     
     @objc func textFieldDidChange(_ textField: UITextField){
         
-        switch textField {
-        case emailTextField:
+        // At each call it validate the users' data and update warning labels and sign up button
+        
+        if let emailString = emailTextField.text, let confirmEmailString = confirmEmailTextField.text,
+            let passwordString = passwordTextField.text, let confirmPasswordString = confirmPasswordTextField.text {
+            
             validEmail = false
-            if let emailString = emailTextField.text {
-                if emailString.isValidEmail() {
-                    validEmail = true
-                    emailWarningLabel.text = ""
-                }
-            }
-        case confirmEmailTextField:
             emailMatches = false
-            if confirmEmailTextField.text == emailTextField.text {
-                emailMatches = true
-                emailMatchWarningLabel.text = ""
-            }
-        case passwordTextField:
             validPassword = false
-            if let passwordString = passwordTextField.text {
-                if passwordString.count >= 6 {
-                    validPassword = true
-                    passwordWarningLabel.text = ""
-                }
+            passwordMatches = false
+            
+            if emailString.isValidEmail() {
+                validEmail = true
+                emailWarningLabel.text = ""
             }
-        case confirmPasswordTextField:
-            if confirmPasswordTextField.text == passwordTextField.text {
+            if emailString == confirmEmailString {
+                emailMatches = true
+                emailMatchWarningLabel.text  = ""
+            }
+            if passwordString.count >= 6 {
+                validPassword = true
+                passwordWarningLabel.text = ""
+            }
+            if passwordString == confirmPasswordString {
                 passwordMatches = true
                 passwordMatchWarningLabel.text = ""
             }
-        default:
-            print("error")
         }
         
         toggleSendButton()

@@ -13,9 +13,13 @@
 "login" = "Login";
 "dontHaveAnAccount" = "Don't have an account yet?";
 "signUp" = "Sign up";
+"invalidEmailWarning" = "Invalid email";
+"invalidPasswordWarning" = "Passwords must be at least 6 characters long";
 
 // SIGN UP VIEW CONTROLLER
 
 "confirmEmail" = "confirm email";
 "confirmPassword" = "confirm password";
 "alreadyHaveAnAccount" = "Already have an account?";
+"emailsDontMatchWarning" = "The emails don't match";
+"passwordsDontMatchWarning" = "Passwords don't match";

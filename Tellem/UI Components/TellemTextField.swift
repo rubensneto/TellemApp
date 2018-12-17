@@ -10,16 +10,17 @@ import UIKit
 
 class TellemTextField: UITextField {
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
     convenience init(){
         self.init(frame: CGRect(x: 0, y: 0, width: 200, height: 40))
-        self.layer.borderColor = UIColor.lightGray.cgColor
+        self.text = ""
+        self.layer.borderColor = UIColor.Tellem.lightGray.cgColor
         self.layer.borderWidth = 0.5
-        self.layer.cornerRadius = 3
+        self.layer.cornerRadius = 2
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,4 +34,5 @@ class TellemTextField: UITextField {
     override func editingRect(forBounds bounds: CGRect) -> CGRect {
         return CGRect(x: bounds.origin.x + 10, y: bounds.origin.y, width: bounds.width, height: bounds.height)
     }
+    
 }

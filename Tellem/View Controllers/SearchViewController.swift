@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: TellemViewController {
     
     let testLabel: UILabel = {
         let label = UILabel()
@@ -19,7 +19,6 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
         addTestLabel()
     }
     

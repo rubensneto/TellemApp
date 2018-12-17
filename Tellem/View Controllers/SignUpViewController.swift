@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: TellemViewController {
     
     var validEmail = false
     var emailMatches = false
@@ -82,6 +82,7 @@ class SignUpViewController: UIViewController {
         let button = TellemButton(title: LocalizedString.signUp)
         button.isEnabled = false
         button.alpha = 0.5
+        button.addTarget(self, action: #selector(doRegister), for: .touchUpInside)
         return button
     }()
     
@@ -107,14 +108,15 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = LocalizedString.signUp
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isTranslucent = false
-        edgesForExtendedLayout = []
         setUpView()
         setUpTextField()
-        hideKeyboardWhenTappedAround()
     }
     
     //MARK: USER ACTIONS
+    
+    @objc func doRegister(){
+        navigationController?.pushViewController(SearchViewController(), animated: true)
+    }
     @objc func backToLogin(){
         navigationController?.popViewController(animated: true)
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: TellemViewController {
     
     let emailTextField: TellemTextField = {
         let textField = TellemTextField()
@@ -27,9 +27,6 @@ class LoginViewController: UIViewController {
     
     let passwordTextField: UITextField = {
         let textField = TellemTextField()
-        if #available(iOS 12, *) {
-            textField.textContentType = .oneTimeCode
-        }
         textField.placeholder = LocalizedString.password
         textField.isSecureTextEntry = true
         textField.autocapitalizationType = .none
@@ -47,6 +44,7 @@ class LoginViewController: UIViewController {
         let button = TellemButton(title: LocalizedString.login)
         button.isEnabled = false
         button.alpha = 0.5
+        button.addTarget(self, action: #selector(doLogin), for: .touchUpInside)
         return button
     }()
     
@@ -76,15 +74,15 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Login"
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.isTranslucent = false
-        edgesForExtendedLayout = []
         setUpView()
         setUpTextField()
-        hideKeyboardWhenTappedAround()
-        
     }
     
     //MARK: USER ACTIONS
+    
+    @objc func doLogin(){
+        navigationController?.pushViewController(TellemConversationTableViewController(), animated: true)
+    }
     
     @objc func showSignUp(){
         navigationController?.pushViewController(SignUpViewController(), animated: true)

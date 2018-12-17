@@ -11,11 +11,14 @@ import XCTest
 class BaseUITest: XCTestCase {
     
     var app: XCUIApplication!
+    
+    var deleteKey: XCUIElement!
 
     override func setUp() {
         continueAfterFailure = false
         app = XCUIApplication()
         app.launch()
+        deleteKey = app.keyboards.keys["delete"]
     }
 
     override func tearDown() {

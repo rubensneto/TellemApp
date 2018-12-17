@@ -8,27 +8,10 @@
 
 import XCTest
 
-class LoginViewControllerUITests: BaseUITest {
+class LoginViewControllerUITests: StartUpViewControllerUITests {
     
-    //TODO: Find out why Unit Test Bundle has direct access to localized string and UI Test Bundle not even that the localizable file is included in all bundles of the project
-    
-    private var emailTextField: XCUIElement {
-        return app.textFields[localizedString(LocalizedString.email)]
-    }
-    private var emailWarningLabel: XCUIElement {
-        return app.staticTexts[localizedString(LocalizedString.invalidEmailWarning)]
-    }
-    private var passwordTextField: XCUIElement {
-        return app.secureTextFields[localizedString(LocalizedString.password)]
-    }
-    private var loginButton: XCUIElement {
-        return app.buttons[localizedString(LocalizedString.login).uppercased()]
-    }
-    private var haveAnAccountLabel: XCUIElement {
-        return app.staticTexts[localizedString(LocalizedString.alreadyHaveAnAccount)]
-    }
-    private var signUpButton: XCUIElement {
-        return app.buttons[localizedString(LocalizedString.signUp).uppercased()]
+    var haveAnAccountLabel: XCUIElement {
+        return app.staticTexts[localizedString(LocalizedString.dontHaveAnAccount)]
     }
     
     override func setUp() {
@@ -61,9 +44,6 @@ class LoginViewControllerUITests: BaseUITest {
         passwordTextField.tap() // Without this step the autofill strong passwords shows up
         typeInvalidEmail()
         passwordTextField.tap()
-        if app.buttons["Choose My Own Password"].exists {
-            app.buttons["Choose My Own Password"].tap()
-        }
         emailTextField.tap()
         emailTextField.typeText(".com")
         // WHEN
@@ -72,9 +52,50 @@ class LoginViewControllerUITests: BaseUITest {
         XCTAssertFalse(emailWarningLabel.exists)
     }
     
-    private func typeInvalidEmail(){
+    func testThatPasswordWarningAppears(){
+        // GIVEN
+        typeInvalidPassword()
+        // WHEN
         emailTextField.tap()
-        emailTextField.typeText("invalid@email")
+        // THEN
+        XCTAssertTrue(passwordWarningLabel.exists)
+    }
+    
+    func testThatPasswordWarningDisappears(){
+        // GIVEN
+        typeInvalidPassword()
+        emailTextField.tap()
+        typeValidPassword()
+        // WHEN
+        emailTextField.tap()
+        // THEN
+        XCTAssertFalse(passwordWarningLabel.exists)
+    }
+    
+    func testThatLoginButtonEnables(){
+        // GIVEN
+        typeValidEmail()
+        typeValidPassword()
+        let exists = NSPredicate(format: "exists == true")
+        expectation(for: exists, evaluatedWith: searchTestLabel, handler: nil)
+        // WHEN
+        loginButton.tap()
+        // THEN
+        waitForExpectations(timeout: 5, handler: nil)
+        XCTAssertTrue(searchTestLabel.exists)
+    }
+    
+    func testThaLoginButtonDisables(){
+        // GIVEN
+        typeValidEmail()
+        typeValidPassword()
+        emailTextField.tap()
+        deleteKey.tap()
+        deleteKey.tap()
+        // WHEN
+        loginButton.tap()
+        // THEN
+        XCTAssertTrue(emailWarningLabel.exists)
     }
     
 }

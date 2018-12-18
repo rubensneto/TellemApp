@@ -23,3 +23,6 @@
 "alreadyHaveAnAccount" = "Already have an account?";
 "emailsDontMatchWarning" = "The emails don't match";
 "passwordsDontMatchWarning" = "Passwords don't match";
+
+// CONVERSATIONS VIEW CONTROLLER
+"chats" = "Chats";

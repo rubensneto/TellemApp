@@ -1,5 +1,5 @@
 //
-//  TellemUITests.swift
+//  TellemLoginViewControllerUITests.swift
 //  TellemUITests
 //
 //  Created by User on 15/12/2018.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class LoginViewControllerUITests: StartUpViewControllerUITests {
+class TellemLoginViewControllerUITests: TellemStartUpViewControllerUITests {
     
     var haveAnAccountLabel: XCUIElement {
         return app.staticTexts[localizedString(LocalizedString.dontHaveAnAccount)]
@@ -77,12 +77,12 @@ class LoginViewControllerUITests: StartUpViewControllerUITests {
         typeValidEmail()
         typeValidPassword()
         let exists = NSPredicate(format: "exists == true")
-        expectation(for: exists, evaluatedWith: searchTestLabel, handler: nil)
+        expectation(for: exists, evaluatedWith: app.tables.cells.staticTexts["Rubens Neto"], handler: nil)
         // WHEN
         loginButton.tap()
         // THEN
         waitForExpectations(timeout: 5, handler: nil)
-        XCTAssertTrue(searchTestLabel.exists)
+        XCTAssertTrue(app.tables.cells.staticTexts["Rubens Neto"].exists)
     }
     
     func testThaLoginButtonDisables(){

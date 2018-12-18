@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TellemViewController.swift
 //  Tellem
 //
 //  Created by User on 10/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: TellemViewController {
+class TellemLoginViewController: TellemViewController {
     
     let emailTextField: TellemTextField = {
         let textField = TellemTextField()
@@ -85,7 +85,7 @@ class LoginViewController: TellemViewController {
     }
     
     @objc func showSignUp(){
-        navigationController?.pushViewController(SignUpViewController(), animated: true)
+        navigationController?.pushViewController(TellemSignUpViewController(), animated: true)
     }
     
     //MARK: UI SET UP
@@ -132,7 +132,7 @@ class LoginViewController: TellemViewController {
     }
 }
 
-extension LoginViewController: UITextFieldDelegate {
+extension TellemLoginViewController: UITextFieldDelegate {
     
     func setUpTextField(){
         emailTextField.delegate = self

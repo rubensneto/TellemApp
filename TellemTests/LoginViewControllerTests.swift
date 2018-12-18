@@ -1,5 +1,5 @@
 //
-//  LoginViewControllerTests.swift
+//  TellemLoginViewControllerTests.swift
 //  TellemTests
 //
 //  Created by User on 10/11/2018.
@@ -9,12 +9,12 @@
 import XCTest
 @testable import Tellem
 
-class LoginViewControllerTests: XCTestCase {
+class TellemLoginViewControllerTests: XCTestCase {
     
-    var loginVC: LoginViewController!
+    var loginVC: TellemLoginViewController!
 
     override func setUp() {
-        loginVC = LoginViewController()
+        loginVC = TellemLoginViewController()
         loginVC.viewDidLoad()
     }
 

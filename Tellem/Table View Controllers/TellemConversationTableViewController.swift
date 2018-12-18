@@ -14,6 +14,8 @@ class TellemConversationTableViewController: TellemTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = LocalizedString.chats
         tableView.register(TellemConversationTableViewCell.self, forCellReuseIdentifier: cellId)
     }
 

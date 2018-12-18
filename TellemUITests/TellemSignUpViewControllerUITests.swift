@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SignUpViewControllerUITests: StartUpViewControllerUITests {
+class TellemSignUpViewControllerUITests: TellemStartUpViewControllerUITests {
     
     //TODO: Find out why Unit Test Bundle has direct access to localized string and UI Test Bundle not even that the localizable file is included in all bundles of the project
     

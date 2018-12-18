@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  TellemSignUpViewController.swift
 //  Tellem
 //
 //  Created by User on 15/11/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: TellemViewController {
+class TellemSignUpViewController: TellemViewController {
     
     var validEmail = false
     var emailMatches = false
@@ -115,7 +115,7 @@ class SignUpViewController: TellemViewController {
     //MARK: USER ACTIONS
     
     @objc func doRegister(){
-        navigationController?.pushViewController(SearchViewController(), animated: true)
+        navigationController?.pushViewController(TellemSearchViewController(), animated: true)
     }
     @objc func backToLogin(){
         navigationController?.popViewController(animated: true)
@@ -189,7 +189,7 @@ class SignUpViewController: TellemViewController {
 
 }
 
-extension SignUpViewController: UITextFieldDelegate {
+extension TellemSignUpViewController: UITextFieldDelegate {
     
     func setUpTextField(){
         emailTextField.delegate = self

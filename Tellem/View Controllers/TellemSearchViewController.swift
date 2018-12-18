@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  TellemSearchViewController.swift
 //  Tellem
 //
 //  Created by Rubens Neto on 14/12/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: TellemViewController {
+class TellemSearchViewController: TellemViewController {
     
     let testLabel: UILabel = {
         let label = UILabel()

@@ -1,5 +1,5 @@
 //
-//  StartUpViewControllerTests.swift
+//  TellemStartUpViewControllerTests.swift
 //  TellemUITests
 //
 //  Created by Rubens Neto on 17/12/2018.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class StartUpViewControllerUITests: BaseUITest {
+class TellemStartUpViewControllerUITests: TellemUITest {
     
     var emailTextField: XCUIElement {
         return app.textFields[localizedString(LocalizedString.email)]

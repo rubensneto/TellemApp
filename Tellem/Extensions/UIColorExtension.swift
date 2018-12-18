@@ -13,5 +13,7 @@ extension UIColor {
         static let lightGray = UIColor.lightGray
         static let green = UIColor.green
         static let red = UIColor.red
+        static let white = UIColor.white
+        static let blue = UIColor.blue
     }
 }

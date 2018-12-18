@@ -9,22 +9,22 @@
 /* Begin PBXBuildFile section */
 		CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
 		CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */; };
-		CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */; };
+		CEA34FFC219D667400C4AB86 /* TellemSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFB219D667400C4AB86 /* TellemSignUpViewController.swift */; };
 		CEA35000219D692E00C4AB86 /* SignUpViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA34FFF219D692E00C4AB86 /* SignUpViewControllerTests.swift */; };
 		CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936442196BFD000DF3860 /* AppDelegate.swift */; };
-		CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936462196BFD000DF3860 /* LoginViewController.swift */; };
+		CEB936472196BFD000DF3860 /* TellemLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936462196BFD000DF3860 /* TellemLoginViewController.swift */; };
 		CEB9364C2196BFE000DF3860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB9364B2196BFE000DF3860 /* Assets.xcassets */; };
 		CEB9364F2196BFE000DF3860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEB9364D2196BFE000DF3860 /* LaunchScreen.storyboard */; };
 		CEB936652196C24700DF3860 /* LoginViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB936642196C24700DF3860 /* LoginViewControllerTests.swift */; };
 		CED1451021C387C6005E72E2 /* StringExtensionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1450F21C387C6005E72E2 /* StringExtensionTests.swift */; };
 		CED1451821C391C8005E72E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
-		D049076521C3F62F0095BE75 /* LoginViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049076421C3F62F0095BE75 /* LoginViewControllerUITests.swift */; };
-		D049076D21C3FF170095BE75 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049076C21C3FF170095BE75 /* SearchViewController.swift */; };
-		D049076F21C40CCF0095BE75 /* SearchViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049076E21C40CCF0095BE75 /* SearchViewControllerUITests.swift */; };
+		D049076521C3F62F0095BE75 /* TellemLoginViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049076421C3F62F0095BE75 /* TellemLoginViewControllerUITests.swift */; };
+		D049076D21C3FF170095BE75 /* TellemSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049076C21C3FF170095BE75 /* TellemSearchViewController.swift */; };
+		D049076F21C40CCF0095BE75 /* TellemSearchViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D049076E21C40CCF0095BE75 /* TellemSearchViewControllerUITests.swift */; };
 		D05D9F8C21C7B181003F6234 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F8A21C7B181003F6234 /* UIColorExtension.swift */; };
 		D05D9F8D21C7B181003F6234 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F8B21C7B181003F6234 /* UIFontExtension.swift */; };
-		D05D9F9021C7B1B8003F6234 /* BaseUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F8E21C7B1B8003F6234 /* BaseUITest.swift */; };
-		D05D9F9121C7B1B8003F6234 /* SignUpViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F8F21C7B1B8003F6234 /* SignUpViewControllerUITests.swift */; };
+		D05D9F9021C7B1B8003F6234 /* TellemUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F8E21C7B1B8003F6234 /* TellemUITest.swift */; };
+		D05D9F9121C7B1B8003F6234 /* TellemSignUpViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F8F21C7B1B8003F6234 /* TellemSignUpViewControllerUITests.swift */; };
 		D05D9F9621C7B1F3003F6234 /* TellemWarningLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F9221C7B1F3003F6234 /* TellemWarningLabel.swift */; };
 		D05D9F9721C7B1F3003F6234 /* TellemTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F9321C7B1F3003F6234 /* TellemTextField.swift */; };
 		D05D9F9821C7B1F3003F6234 /* TellemTextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F9421C7B1F3003F6234 /* TellemTextButton.swift */; };
@@ -34,11 +34,12 @@
 		D05D9F9D21C7B633003F6234 /* LocalizedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9F9A21C7B23A003F6234 /* LocalizedString.swift */; };
 		D05D9F9E21C7B642003F6234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
 		D05D9F9F21C7B643003F6234 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CED1451A21C391C8005E72E2 /* Localizable.strings */; };
-		D05D9FA121C7E874003F6234 /* StartUpViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FA021C7E874003F6234 /* StartUpViewControllerUITests.swift */; };
+		D05D9FA121C7E874003F6234 /* TellemStartUpViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FA021C7E874003F6234 /* TellemStartUpViewControllerUITests.swift */; };
 		D05D9FA421C7F280003F6234 /* TellemConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FA321C7F280003F6234 /* TellemConversationTableViewCell.swift */; };
 		D05D9FA721C7F301003F6234 /* TellemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FA621C7F301003F6234 /* TellemTableViewController.swift */; };
 		D05D9FA921C7F344003F6234 /* TellemConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FA821C7F344003F6234 /* TellemConversationTableViewController.swift */; };
 		D05D9FAB21C7F3F5003F6234 /* TellemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FAA21C7F3F5003F6234 /* TellemViewController.swift */; };
+		D05D9FAE21C9385A003F6234 /* TellemConversationViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05D9FAD21C9385A003F6234 /* TellemConversationViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +63,11 @@
 		CE48CEBB21A0112B0067E30E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE7E6976219AAECF00AF2FFC /* TellemTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTextField.swift; sourceTree = "<group>"; };
-		CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CEA34FFB219D667400C4AB86 /* TellemSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemSignUpViewController.swift; sourceTree = "<group>"; };
 		CEA34FFF219D692E00C4AB86 /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		CEB936412196BFD000DF3860 /* Tellem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tellem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB936442196BFD000DF3860 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CEB936462196BFD000DF3860 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CEB936462196BFD000DF3860 /* TellemLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemLoginViewController.swift; sourceTree = "<group>"; };
 		CEB9364B2196BFE000DF3860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB9364E2196BFE000DF3860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEB936502196BFE000DF3860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,24 +79,25 @@
 		CED1451921C391C8005E72E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		CED1451B21C39345005E72E2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		D049076221C3F62F0095BE75 /* TellemUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TellemUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D049076421C3F62F0095BE75 /* LoginViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewControllerUITests.swift; sourceTree = "<group>"; };
+		D049076421C3F62F0095BE75 /* TellemLoginViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemLoginViewControllerUITests.swift; sourceTree = "<group>"; };
 		D049076621C3F62F0095BE75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D049076C21C3FF170095BE75 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		D049076E21C40CCF0095BE75 /* SearchViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewControllerUITests.swift; sourceTree = "<group>"; };
+		D049076C21C3FF170095BE75 /* TellemSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemSearchViewController.swift; sourceTree = "<group>"; };
+		D049076E21C40CCF0095BE75 /* TellemSearchViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemSearchViewControllerUITests.swift; sourceTree = "<group>"; };
 		D05D9F8A21C7B181003F6234 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		D05D9F8B21C7B181003F6234 /* UIFontExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
-		D05D9F8E21C7B1B8003F6234 /* BaseUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUITest.swift; sourceTree = "<group>"; };
-		D05D9F8F21C7B1B8003F6234 /* SignUpViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerUITests.swift; sourceTree = "<group>"; };
+		D05D9F8E21C7B1B8003F6234 /* TellemUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TellemUITest.swift; sourceTree = "<group>"; };
+		D05D9F8F21C7B1B8003F6234 /* TellemSignUpViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TellemSignUpViewControllerUITests.swift; sourceTree = "<group>"; };
 		D05D9F9221C7B1F3003F6234 /* TellemWarningLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TellemWarningLabel.swift; sourceTree = "<group>"; };
 		D05D9F9321C7B1F3003F6234 /* TellemTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TellemTextField.swift; sourceTree = "<group>"; };
 		D05D9F9421C7B1F3003F6234 /* TellemTextButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TellemTextButton.swift; sourceTree = "<group>"; };
 		D05D9F9521C7B1F3003F6234 /* TellemButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TellemButton.swift; sourceTree = "<group>"; };
 		D05D9F9A21C7B23A003F6234 /* LocalizedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizedString.swift; sourceTree = "<group>"; };
-		D05D9FA021C7E874003F6234 /* StartUpViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartUpViewControllerUITests.swift; sourceTree = "<group>"; };
+		D05D9FA021C7E874003F6234 /* TellemStartUpViewControllerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemStartUpViewControllerUITests.swift; sourceTree = "<group>"; };
 		D05D9FA321C7F280003F6234 /* TellemConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemConversationTableViewCell.swift; sourceTree = "<group>"; };
 		D05D9FA621C7F301003F6234 /* TellemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemTableViewController.swift; sourceTree = "<group>"; };
 		D05D9FA821C7F344003F6234 /* TellemConversationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemConversationTableViewController.swift; sourceTree = "<group>"; };
 		D05D9FAA21C7F3F5003F6234 /* TellemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemViewController.swift; sourceTree = "<group>"; };
+		D05D9FAD21C9385A003F6234 /* TellemConversationViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemConversationViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +180,6 @@
 				D05D9FA521C7F2B0003F6234 /* Table View Controllers */,
 				CE7E6975219AAE9900AF2FFC /* UI Components */,
 				CED1451421C38EFF005E72E2 /* View Controllers */,
-				CED1451521C38F6F005E72E2 /* View Models */,
 			);
 			path = Tellem;
 			sourceTree = "<group>";
@@ -216,28 +217,22 @@
 			isa = PBXGroup;
 			children = (
 				D05D9FAA21C7F3F5003F6234 /* TellemViewController.swift */,
-				CEB936462196BFD000DF3860 /* LoginViewController.swift */,
-				CEA34FFB219D667400C4AB86 /* SignUpViewController.swift */,
-				D049076C21C3FF170095BE75 /* SearchViewController.swift */,
+				CEB936462196BFD000DF3860 /* TellemLoginViewController.swift */,
+				CEA34FFB219D667400C4AB86 /* TellemSignUpViewController.swift */,
+				D049076C21C3FF170095BE75 /* TellemSearchViewController.swift */,
 			);
 			path = "View Controllers";
-			sourceTree = "<group>";
-		};
-		CED1451521C38F6F005E72E2 /* View Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Models";
 			sourceTree = "<group>";
 		};
 		D049076321C3F62F0095BE75 /* TellemUITests */ = {
 			isa = PBXGroup;
 			children = (
-				D05D9F8E21C7B1B8003F6234 /* BaseUITest.swift */,
-				D05D9FA021C7E874003F6234 /* StartUpViewControllerUITests.swift */,
-				D049076421C3F62F0095BE75 /* LoginViewControllerUITests.swift */,
-				D05D9F8F21C7B1B8003F6234 /* SignUpViewControllerUITests.swift */,
-				D049076E21C40CCF0095BE75 /* SearchViewControllerUITests.swift */,
+				D05D9F8E21C7B1B8003F6234 /* TellemUITest.swift */,
+				D05D9FA021C7E874003F6234 /* TellemStartUpViewControllerUITests.swift */,
+				D049076421C3F62F0095BE75 /* TellemLoginViewControllerUITests.swift */,
+				D05D9F8F21C7B1B8003F6234 /* TellemSignUpViewControllerUITests.swift */,
+				D049076E21C40CCF0095BE75 /* TellemSearchViewControllerUITests.swift */,
+				D05D9FAD21C9385A003F6234 /* TellemConversationViewControllerTests.swift */,
 				D049076621C3F62F0095BE75 /* Info.plist */,
 			);
 			path = TellemUITests;
@@ -398,18 +393,18 @@
 				D05D9F9621C7B1F3003F6234 /* TellemWarningLabel.swift in Sources */,
 				D05D9F9B21C7B23B003F6234 /* LocalizedString.swift in Sources */,
 				D05D9F8D21C7B181003F6234 /* UIFontExtension.swift in Sources */,
-				D049076D21C3FF170095BE75 /* SearchViewController.swift in Sources */,
+				D049076D21C3FF170095BE75 /* TellemSearchViewController.swift in Sources */,
 				CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */,
 				D05D9F9821C7B1F3003F6234 /* TellemTextButton.swift in Sources */,
 				D05D9F9921C7B1F3003F6234 /* TellemButton.swift in Sources */,
 				D05D9F8C21C7B181003F6234 /* UIColorExtension.swift in Sources */,
-				CEB936472196BFD000DF3860 /* LoginViewController.swift in Sources */,
+				CEB936472196BFD000DF3860 /* TellemLoginViewController.swift in Sources */,
 				CEB936452196BFD000DF3860 /* AppDelegate.swift in Sources */,
 				D05D9FA721C7F301003F6234 /* TellemTableViewController.swift in Sources */,
 				D05D9FA921C7F344003F6234 /* TellemConversationTableViewController.swift in Sources */,
 				CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */,
 				D05D9F9721C7B1F3003F6234 /* TellemTextField.swift in Sources */,
-				CEA34FFC219D667400C4AB86 /* SignUpViewController.swift in Sources */,
+				CEA34FFC219D667400C4AB86 /* TellemSignUpViewController.swift in Sources */,
 				D05D9FA421C7F280003F6234 /* TellemConversationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -429,12 +424,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D05D9FA121C7E874003F6234 /* StartUpViewControllerUITests.swift in Sources */,
+				D05D9FA121C7E874003F6234 /* TellemStartUpViewControllerUITests.swift in Sources */,
 				D05D9F9C21C7B632003F6234 /* LocalizedString.swift in Sources */,
-				D05D9F9021C7B1B8003F6234 /* BaseUITest.swift in Sources */,
-				D049076F21C40CCF0095BE75 /* SearchViewControllerUITests.swift in Sources */,
-				D05D9F9121C7B1B8003F6234 /* SignUpViewControllerUITests.swift in Sources */,
-				D049076521C3F62F0095BE75 /* LoginViewControllerUITests.swift in Sources */,
+				D05D9F9021C7B1B8003F6234 /* TellemUITest.swift in Sources */,
+				D049076F21C40CCF0095BE75 /* TellemSearchViewControllerUITests.swift in Sources */,
+				D05D9FAE21C9385A003F6234 /* TellemConversationViewControllerTests.swift in Sources */,
+				D05D9F9121C7B1B8003F6234 /* TellemSignUpViewControllerUITests.swift in Sources */,
+				D049076521C3F62F0095BE75 /* TellemLoginViewControllerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

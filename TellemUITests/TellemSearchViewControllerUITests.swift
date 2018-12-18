@@ -1,5 +1,5 @@
 //
-//  SearchViewControllerUITests.swift
+//  TellemSearchViewControllerUITests.swift
 //  TellemUITests
 //
 //  Created by Rubens Neto on 14/12/2018.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class SearchViewControllerUITests: XCTestCase {
+class TellemSearchViewControllerUITests: XCTestCase {
     
     var app: XCUIApplication!
         

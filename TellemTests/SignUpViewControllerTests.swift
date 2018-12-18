@@ -1,5 +1,5 @@
 //
-//  SignUpViewControllerTests.swift
+//  TellemSignUpViewControllerTests.swift
 //  TellemTests
 //
 //  Created by User on 15/11/2018.
@@ -9,12 +9,12 @@
 import XCTest
 @testable import Tellem
 
-class SignUpViewControllerTests: XCTestCase {
+class TellemSignUpViewControllerTests: XCTestCase {
 
-    var signUpVC: SignUpViewController!
+    var signUpVC: TellemSignUpViewController!
     
     override func setUp() {
-        signUpVC = SignUpViewController()
+        signUpVC = TellemSignUpViewController()
     }
 
     override func tearDown() {

@@ -23,3 +23,7 @@
 "alreadyHaveAnAccount" = "Já é registrado?";
 "emailsDontMatchWarning" = "Os e-mails não batem";
 "passwordsDontMatchWarning" = "As senhas não batem";
+
+// CONVERSATIONS VIEW CONTROLLER
+"chats" = "Conversas";
+

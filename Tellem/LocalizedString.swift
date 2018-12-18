@@ -25,4 +25,5 @@ struct LocalizedString {
     static let alreadyHaveAnAccount = NSLocalizedString("alreadyHaveAnAccount", comment: "")
     static let emailsDontMatchWarning = NSLocalizedString("emailsDontMatchWarning", comment: "")
     static let passwordsDontMatchWarning = NSLocalizedString("passwordsDontMatchWarning", comment: "")
+    static let chats = NSLocalizedString("chats", comment: "")
 }

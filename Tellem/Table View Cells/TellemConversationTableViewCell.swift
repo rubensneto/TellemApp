@@ -10,9 +10,15 @@ import UIKit
 
 class TellemConversationTableViewCell: UITableViewCell {
     
+    var viewModel: TellemConversationCellViewModel! {
+        didSet {
+            setUpAccessibilityIdentifiers()
+            setUpViewModel()
+        }
+    }
+    
     let profileImageView: UIImageView = {
         let imageView = UIImageView ()
-        imageView.image = UIImage(named: "Rubens")
         imageView.clipsToBounds = true
         imageView.layer.cornerRadius = 24
         imageView.contentMode = .scaleAspectFill
@@ -21,21 +27,18 @@ class TellemConversationTableViewCell: UITableViewCell {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Rubens Neto"
         label.font = UIFont.Tellem.mediumBold
         return label
     }()
     
     let timeStampLabel: UILabel = {
         let label = UILabel()
-        label.text = "14:56"
         label.font = UIFont.Tellem.medium
         return label
     }()
     
     let messageLabel: UILabel = {
         let label = UILabel()
-        label.text = "Let's build it!"
         label.font = UIFont.Tellem.mediumSmall
         return label
     }()
@@ -43,7 +46,7 @@ class TellemConversationTableViewCell: UITableViewCell {
     let newMessageAlertView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.Tellem.blue
-        view.layer.cornerRadius = 6
+        view.layer.cornerRadius = 10
         return view
     }()
     
@@ -51,7 +54,6 @@ class TellemConversationTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = UIColor.Tellem.white
         label.font = UIFont.Tellem.medium
-        label.text = "23"
         return label
     }()
     
@@ -104,7 +106,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         newMessageAlertView.heightAnchor.constraint(equalTo: newMessageAlertLabel.heightAnchor).isActive = true
         let newMessageAlertViewWidthConstraint =  newMessageAlertView.widthAnchor.constraint(equalTo: newMessageAlertLabel.widthAnchor)
         newMessageAlertViewWidthConstraint.isActive = true
-        newMessageAlertViewWidthConstraint.constant = newMessageAlertViewWidthConstraint.constant + 4
+        newMessageAlertViewWidthConstraint.constant = newMessageAlertViewWidthConstraint.constant + 10
         
         setSubviewsAutoResizingMask()
     }
@@ -113,6 +115,26 @@ class TellemConversationTableViewCell: UITableViewCell {
         for view in subviews {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
+    }
+    
+    // HELPERS
+    
+    private func setUpViewModel(){
+        profileImageView.image = viewModel.profileImage
+        nameLabel.text = viewModel.profileName
+        messageLabel.text = viewModel.lastMessage
+        timeStampLabel.text = viewModel.lastMessageTimestamp
+        newMessageAlertLabel.text = viewModel.newMessages
+    }
+    
+    private func setUpAccessibilityIdentifiers(){
+        typealias AccessId = AccessibilityIdentifier.ConversationCell
+        let row = "\(viewModel.indexPath.row)"
+        profileImageView.accessibilityIdentifier = AccessId.profileImage + row
+        nameLabel.accessibilityIdentifier = AccessId.profileName + row
+        messageLabel.accessibilityIdentifier = AccessId.lastMessage + row
+        timeStampLabel.accessibilityIdentifier = AccessId.timestamp + row
+        accessibilityIdentifier = AccessId.conversationCell + row
     }
 
 }

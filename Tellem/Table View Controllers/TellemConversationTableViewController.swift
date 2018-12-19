@@ -11,6 +11,7 @@ import UIKit
 class TellemConversationTableViewController: TellemTableViewController {
     
     let cellId = "ConversationCellId"
+    var viewModel = TellemConversationTableViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,28 +20,20 @@ class TellemConversationTableViewController: TellemTableViewController {
         tableView.register(TellemConversationTableViewCell.self, forCellReuseIdentifier: cellId)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 5
+        return viewModel.cellModels.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TellemConversationTableViewCell
+        cell.viewModel = viewModel.cellModels[indexPath.row]
         return cell
     }
     

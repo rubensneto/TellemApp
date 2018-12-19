@@ -9,9 +9,15 @@
 import XCTest
 
 class TellemConversationViewControllerTests: TellemUITest {
-        
+    
+    typealias AccessId = AccessibilityIdentifier.ConversationCell
+    private var counter: Int!
+    private var range: CountableClosedRange<Int>!
+    
     override func setUp() {
         super.setUp()
+        counter = app.tables.cells.count
+        range = 0...(counter - 1)
     }
     
     override func tearDown() {
@@ -19,9 +25,14 @@ class TellemConversationViewControllerTests: TellemUITest {
     }
     
     func testThatUIElementsExist(){
-        doLogin()
-        XCTAssertTrue(app.staticTexts["Rubens Neto"].exists)
-        
+        if counter > 0 {
+            for index in range {
+                XCTAssertTrue(app.tables.cells[AccessId.conversationCell + "\(index)"].exists)
+                XCTAssertTrue(app.images[AccessId.profileImage + "\(index)"].exists)
+                XCTAssertTrue(app.staticTexts[AccessId.profileName + "\(index)"].exists)
+                XCTAssertTrue(app.staticTexts[AccessId.lastMessage + "\(index)"].exists)
+                XCTAssertTrue(app.staticTexts[AccessId.timestamp + "\(index)"].exists)
+            }
+        }
     }
-    
 }

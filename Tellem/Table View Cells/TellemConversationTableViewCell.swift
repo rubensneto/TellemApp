@@ -37,6 +37,12 @@ class TellemConversationTableViewCell: UITableViewCell {
         return label
     }()
     
+    let messageStatusImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
     let messageLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.Tellem.mediumSmall
@@ -57,7 +63,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         return label
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setUpLayout()
     }
@@ -74,29 +80,36 @@ class TellemConversationTableViewCell: UITableViewCell {
     func setUpLayout(){
         
         addSubview(profileImageView)
+        addSubview(timeStampLabel)
+        addSubview(nameLabel)
+        addSubview(messageStatusImageView)
+        addSubview(newMessageAlertView)
+        addSubview(messageLabel)
+        addSubview(newMessageAlertLabel)
+        
         profileImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         profileImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
         profileImageView.heightAnchor.constraint(equalToConstant: 48).isActive = true
         profileImageView.widthAnchor.constraint(equalToConstant: 48).isActive = true
         profileImageView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -12).isActive = true
         
-        addSubview(timeStampLabel)
         timeStampLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         timeStampLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
         timeStampLabel.setContentHuggingPriority(.required, for: .horizontal)
         
-        addSubview(nameLabel)
         nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
         nameLabel.rightAnchor.constraint(greaterThanOrEqualTo: timeStampLabel.leftAnchor, constant: -6).isActive = true
-
-        addSubview(messageLabel)
-        messageLabel.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
-        messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6).isActive = true
-        messageLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 12).isActive = true
         
-        addSubview(newMessageAlertView)
-        addSubview(newMessageAlertLabel)
+        messageStatusImageView.heightAnchor.constraint(equalToConstant: 14).isActive = true
+        messageStatusImageView.widthAnchor.constraint(lessThanOrEqualToConstant: 14).isActive = true
+        messageStatusImageView.centerYAnchor.constraint(equalTo: messageLabel.centerYAnchor).isActive = true
+        messageStatusImageView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 12).isActive = true
+        
+        messageLabel.leftAnchor.constraint(equalTo: messageStatusImageView.rightAnchor, constant: 2).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6).isActive = true
+        messageLabel.rightAnchor.constraint(lessThanOrEqualTo: newMessageAlertView.leftAnchor, constant: -6).isActive = true
+        
         newMessageAlertLabel.topAnchor.constraint(equalTo: timeStampLabel.bottomAnchor, constant: 6).isActive = true
         newMessageAlertLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
         newMessageAlertView.setContentHuggingPriority(.required, for: .horizontal)
@@ -111,13 +124,14 @@ class TellemConversationTableViewCell: UITableViewCell {
         setSubviewsAutoResizingMask()
     }
     
+    
+    // HELPERS
+    
     func setSubviewsAutoResizingMask(){
         for view in subviews {
             view.translatesAutoresizingMaskIntoConstraints = false
         }
     }
-    
-    // HELPERS
     
     private func setUpViewModel(){
         profileImageView.image = viewModel.profileImage
@@ -125,6 +139,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         messageLabel.text = viewModel.lastMessage
         timeStampLabel.text = viewModel.lastMessageTimestamp
         newMessageAlertLabel.text = viewModel.newMessages
+        messageStatusImageView.image = viewModel.messageStatusImage
     }
     
     private func setUpAccessibilityIdentifiers(){

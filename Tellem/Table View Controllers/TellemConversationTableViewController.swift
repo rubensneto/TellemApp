@@ -33,7 +33,9 @@ class TellemConversationTableViewController: TellemTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TellemConversationTableViewCell
-        cell.viewModel = viewModel.cellModels[indexPath.row]
+        let cellViewModel = viewModel.cellModels[indexPath.row]
+        cellViewModel.indexPath = indexPath
+        cell.viewModel = cellViewModel
         return cell
     }
     

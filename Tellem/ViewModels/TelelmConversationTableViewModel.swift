@@ -13,19 +13,20 @@ class TellemConversationTableViewModel {
     var cellModels = [TellemConversationCellViewModel]()
     
     init(){
-        let amber = TellemConversationCellViewModel(indexPath: IndexPath(item: cellModels.count, section: 0), profileName: "Amber Tyler", profileImage: UIImage(named: "gatinha1"), lastMessage: "Yeah, I really enjoyed my night", lastMessageTimestamp: "12:11", newMessages: "4")
+        
+        let amber = TellemConversationCellViewModel(profileName: "Amber Tyler", profileImage: UIImage(named: "gatinha1")!, lastMessage: "Yeah, I really enjoyed my night. What are you up to tonight?", lastMessageTimestamp: "12:11", newMessages: "4", lastMessageStatus: .read)
         cellModels.append(amber)
-        
-        let carol = TellemConversationCellViewModel(indexPath: IndexPath(item: cellModels.count, section: 0), profileName: "Carol Smith", profileImage: UIImage(named: "gatinha2"), lastMessage: "So when are you free next?", lastMessageTimestamp: "02:13", newMessages: "2")
+
+        let carol = TellemConversationCellViewModel(profileName: "Carol Smith", profileImage: UIImage(named: "gatinha2")!, lastMessage: "So when are you free next?", lastMessageTimestamp: "02:13", newMessages: "2", lastMessageStatus: .pending)
         cellModels.append(carol)
-        
-        let jane = TellemConversationCellViewModel(indexPath: IndexPath(item: cellModels.count, section: 0), profileName: "Jane Harper", profileImage: UIImage(named: "gatinha3"), lastMessage: "Hey why don't answer me anymore?", lastMessageTimestamp: "Yesterday", newMessages: "11")
+
+        let jane = TellemConversationCellViewModel(profileName: "Jane Harper", profileImage: UIImage(named: "gatinha3")!, lastMessage: "Hey why don't answer me anymore?", lastMessageTimestamp: "Yesterday", newMessages: "11", lastMessageStatus: .delivered)
         cellModels.append(jane)
-        
-        let lisa = TellemConversationCellViewModel(indexPath: IndexPath(item: cellModels.count, section: 0), profileName: "Amber Tyler", profileImage: UIImage(named: "gatinha4"), lastMessage: "Yeah, I really enjoyed my night", lastMessageTimestamp: "Monday", newMessages: "4")
+
+        let lisa = TellemConversationCellViewModel(profileName: "Lisa Parker", profileImage: UIImage(named: "gatinha4")!, lastMessage: "Yeah, I really enjoyed my night", lastMessageTimestamp: "Monday", newMessages: nil, lastMessageStatus: .sent)
         cellModels.append(lisa)
-        
-        let kate = TellemConversationCellViewModel(indexPath: IndexPath(item: cellModels.count, section: 0), profileName: "Kate Marshal", profileImage: UIImage(named: "gatinha5"), lastMessage: "Yeah, I really enjoyed my night", lastMessageTimestamp: "07/12/2018", newMessages: "4")
+
+        let kate = TellemConversationCellViewModel(profileName: "Kate Marshal", profileImage: UIImage(named: "gatinha5")!, lastMessage: "Yeah, I really enjoyed my night", lastMessageTimestamp: "07/12/2018", newMessages: "4", lastMessageStatus: .sent)
         cellModels.append(kate)
     }
 }

@@ -27,7 +27,7 @@ class TellemMessageDataSource {
     
     init(){
         
-        let ginaMessage = TellemMessage(interlocutor: gina, senderId: userId, receiverId: gina.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -540), status: .delivered)
+        let ginaMessage = TellemMessage(interlocutor: gina, senderId: userId, receiverId: gina.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(400)), status: .delivered)
         gina.newMessages = 23
         gina.lastMessage = ginaMessage
         messages.append(ginaMessage)
@@ -35,33 +35,41 @@ class TellemMessageDataSource {
         amber.newMessages = 1
         amber.lastMessage = amberMessage
         messages.append(amberMessage)
-        let lisaMessage = TellemMessage(interlocutor: lisa, senderId: userId, receiverId: lisa.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -60), status: .delivered)
+        let lisaMessage = TellemMessage(interlocutor: lisa, senderId: userId, receiverId: lisa.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(35)), status: .delivered)
         lisa.lastMessage = lisaMessage
         messages.append(lisaMessage)
-        let zoeMessage = TellemMessage(interlocutor: zoe, senderId: zoe.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -120), status: .read)
+        let zoeMessage = TellemMessage(interlocutor: zoe, senderId: zoe.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(7)), status: .read)
         zoe.lastMessage = zoeMessage
         messages.append(zoeMessage)
-        let nathalyMessage = TellemMessage(interlocutor: nathaly, senderId: userId, receiverId: nathaly.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -180), status: .read)
+        let nathalyMessage = TellemMessage(interlocutor: nathaly, senderId: userId, receiverId: nathaly.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(6)), status: .read)
         nathaly.lastMessage = nathalyMessage
         messages.append(nathalyMessage)
-        let kateMessage = TellemMessage(interlocutor: kate, senderId: kate.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -240), status: .sent)
+        let kateMessage = TellemMessage(interlocutor: kate, senderId: kate.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(5)), status: .sent)
         kate.newMessages = 7
         kate.lastMessage = kateMessage
         messages.append(kateMessage)
-        let jessieMessage = TellemMessage(interlocutor: jessie, senderId: userId, receiverId: jessie.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -300), status: .sent)
+        let jessieMessage = TellemMessage(interlocutor: jessie, senderId: userId, receiverId: jessie.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(4)), status: .sent)
         jessie.lastMessage = jessieMessage
         messages.append(jessieMessage)
-        let ashleighMessage = TellemMessage(interlocutor: ashleigh, senderId: ashleigh.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -360), status: .delivered)
+        let ashleighMessage = TellemMessage(interlocutor: ashleigh, senderId: ashleigh.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(3)), status: .delivered)
         ashleigh.newMessages = ashleigh.newMessages + 1
         ashleigh.lastMessage = ashleighMessage
         messages.append(ashleighMessage)
-        let mollyMessage = TellemMessage(interlocutor: molly, senderId: userId, receiverId: molly.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -420), status: .pending)
+        let mollyMessage = TellemMessage(interlocutor: molly, senderId: userId, receiverId: molly.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(2)), status: .pending)
         molly.lastMessage = mollyMessage
         messages.append(mollyMessage)
-        let rachelMessage = TellemMessage(interlocutor: rachel, senderId: rachel.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -480), status: .delivered)
+        let rachelMessage = TellemMessage(interlocutor: rachel, senderId: rachel.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: daysAgo(1)), status: .delivered)
         rachel.newMessages = 123
         rachel.lastMessage = rachelMessage
         messages.append(rachelMessage)
         
+        messages = messages.sorted(by: { $0.timeStamp.compare($1.timeStamp) == .orderedDescending })
+    }
+    
+    func daysAgo(_ days: Double) -> Double {
+        let minute = 60
+        let hour = 60 * minute
+        let day = 24 * hour
+        return -(Double(day) * days)
     }
 }

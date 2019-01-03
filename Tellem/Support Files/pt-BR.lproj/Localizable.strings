@@ -27,3 +27,12 @@
 // CONVERSATIONS VIEW CONTROLLER
 "chats" = "Conversas";
 
+// DATES
+"yesterday" = "Ontem";
+"monday" = "Segunda-feira";
+"tuesday" = "Terça-feira";
+"wednesday" = "Quarta-feira";
+"thursday" = "Quinta-feira";
+"friday" = "Sexta-feira";
+"saturday" = "Sabado";
+"sunday" = "Domingo";

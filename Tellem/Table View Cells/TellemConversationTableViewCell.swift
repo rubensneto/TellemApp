@@ -120,11 +120,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         
         let newMessageAlertViewWidthConstraint =  newMessageAlertView.widthAnchor.constraint(equalTo: newMessageAlertLabel.widthAnchor)
         newMessageAlertViewWidthConstraint.isActive = true
-        newMessageAlertViewWidthConstraint.constant = newMessageAlertViewWidthConstraint.constant + 10
-        if newMessageAlertViewWidthConstraint.constant < 19.5 {
-            newMessageAlertViewWidthConstraint.constant = 19.5
-        }
-        
+        newMessageAlertViewWidthConstraint.constant = newMessageAlertViewWidthConstraint.constant + 12
         
         if !viewModel.displayMessageStatusView {
             messageStatusImageView.isHidden = true

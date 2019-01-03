@@ -50,24 +50,19 @@ class TellemConversationTableViewCell: UITableViewCell {
         return label
     }()
     
-    let newMessageAlertView: TellemNewMessagesBadgeView = {
-        let view = TellemNewMessagesBadgeView()
+    let newMessageAlertView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.Tellem.blue
+        view.layer.cornerRadius = 10
         return view
     }()
     
-//    let newMessageAlertView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = UIColor.Tellem.blue
-//        view.layer.cornerRadius = 10
-//        return view
-//    }()
-//
-//    let newMessageAlertLabel: UILabel = {
-//        let label = UILabel()
-//        label.textColor = UIColor.Tellem.white
-//        label.font = UIFont.Tellem.medium
-//        return label
-//    }()
+    let newMessageAlertLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = UIColor.Tellem.white
+        label.font = UIFont.Tellem.medium
+        return label
+    }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -90,7 +85,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         addSubview(messageStatusImageView)
         addSubview(newMessageAlertView)
         addSubview(messageLabel)
-        //addSubview(newMessageAlertLabel)
+        addSubview(newMessageAlertLabel)
         
         profileImageView.topAnchor.constraint(equalTo: topAnchor, constant: 12).isActive = true
         profileImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 12).isActive = true
@@ -115,19 +110,20 @@ class TellemConversationTableViewCell: UITableViewCell {
         messageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 6).isActive = true
         messageLabel.rightAnchor.constraint(lessThanOrEqualTo: newMessageAlertView.leftAnchor, constant: -6).isActive = true
         
-        newMessageAlertView.topAnchor.constraint(equalTo: timeStampLabel.bottomAnchor, constant: 6).isActive = true
-        newMessageAlertView.rightAnchor.constraint(equalTo: rightAnchor, constant: -12).isActive = true
-//        newMessageAlertLabel.setContentHuggingPriority(.required, for: .horizontal)
-//
-//        newMessageAlertView.centerYAnchor.constraint(equalTo: newMessageAlertLabel.centerYAnchor).isActive = true
-//        newMessageAlertView.centerXAnchor.constraint(equalTo: newMessageAlertLabel.centerXAnchor).isActive = true
-//        newMessageAlertView.heightAnchor.constraint(equalTo: newMessageAlertLabel.heightAnchor).isActive = true
-//
-//        let newMessageAlertViewWidthConstraint =  newMessageAlertView.widthAnchor.constraint(equalTo: newMessageAlertLabel.widthAnchor)
-//        newMessageAlertViewWidthConstraint.isActive = true
-//        var constant: CGFloat
-//        viewModel.newMessages > 1 ? (constant = 11) : (constant = 12)
-//        newMessageAlertViewWidthConstraint.constant = newMessageAlertViewWidthConstraint.constant + constant
+        newMessageAlertLabel.topAnchor.constraint(equalTo: timeStampLabel.bottomAnchor, constant: 6).isActive = true
+        newMessageAlertLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -18).isActive = true
+        newMessageAlertLabel.setContentHuggingPriority(.required, for: .horizontal)
+        
+        newMessageAlertView.centerYAnchor.constraint(equalTo: newMessageAlertLabel.centerYAnchor).isActive = true
+        newMessageAlertView.centerXAnchor.constraint(equalTo: newMessageAlertLabel.centerXAnchor).isActive = true
+        newMessageAlertView.heightAnchor.constraint(equalTo: newMessageAlertLabel.heightAnchor).isActive = true
+        
+        let newMessageAlertViewWidthConstraint =  newMessageAlertView.widthAnchor.constraint(equalTo: newMessageAlertLabel.widthAnchor)
+        newMessageAlertViewWidthConstraint.isActive = true
+        newMessageAlertViewWidthConstraint.constant = newMessageAlertViewWidthConstraint.constant + 10
+        if newMessageAlertViewWidthConstraint.constant < 19.5 {
+            newMessageAlertViewWidthConstraint.constant = 19.5
+        }
         
         
         if !viewModel.displayMessageStatusView {
@@ -152,7 +148,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         nameLabel.text = viewModel.profileName
         messageLabel.text = viewModel.lastMessage
         timeStampLabel.text = viewModel.lastMessageTimestamp
-        newMessageAlertView.newMessagesCount = viewModel.newMessages
+        viewModel.newMessages > 0 ? (newMessageAlertLabel.text = "\(viewModel.newMessages)") : (newMessageAlertLabel.text = "")
         messageStatusImageView.image = viewModel.messageStatusImage
     }
     

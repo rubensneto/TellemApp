@@ -27,6 +27,10 @@ class TellemMessageDataSource {
     
     init(){
         
+        let ginaMessage = TellemMessage(interlocutor: gina, senderId: userId, receiverId: gina.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -540), status: .delivered)
+        gina.newMessages = 23
+        gina.lastMessage = ginaMessage
+        messages.append(ginaMessage)
         let amberMessage = TellemMessage(interlocutor: amber, senderId: amber.id, receiverId: userId, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: 0), status: .delivered)
         amber.newMessages = 1
         amber.lastMessage = amberMessage
@@ -58,9 +62,6 @@ class TellemMessageDataSource {
         rachel.newMessages = 123
         rachel.lastMessage = rachelMessage
         messages.append(rachelMessage)
-        let ginaMessage = TellemMessage(interlocutor: gina, senderId: userId, receiverId: gina.id, type: .text, text: "Hey", timeStamp: Date(timeIntervalSinceNow: -540), status: .delivered)
-        gina.newMessages = 23
-        gina.lastMessage = ginaMessage
-        messages.append(ginaMessage)
+        
     }
 }

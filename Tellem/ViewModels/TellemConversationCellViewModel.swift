@@ -20,7 +20,7 @@ class TellemConversationCellViewModel {
     var profileName: String
     var profileImage: UIImage
     var lastMessage: String!
-    var lastMessageTimestamp: String
+    var lastMessageTimestamp: Date
     var newMessages: Int
     var lastMessageStatus: MessageStatus!
     var displayMessageStatusView: Bool
@@ -38,7 +38,7 @@ class TellemConversationCellViewModel {
         self.profileName = message.interlocutor.name
         self.profileImage = message.interlocutor.profileImage
         self.lastMessage = message.text
-        self.lastMessageTimestamp = message.timeStamp.tellemDateString()
+        self.lastMessageTimestamp = message.timeStamp
         self.newMessages = message.interlocutor.newMessages
         self.lastMessageStatus = message.status
         

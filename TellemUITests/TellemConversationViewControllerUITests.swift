@@ -8,7 +8,7 @@
 
 import XCTest
 
-class TellemConversationViewControllerTests: TellemUITest {
+class TellemConversationViewControllerUITests: TellemUITest {
     
     typealias AccessId = AccessibilityIdentifier.ConversationCell
     private var counter: Int!

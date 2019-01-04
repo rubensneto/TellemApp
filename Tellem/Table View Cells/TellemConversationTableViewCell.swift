@@ -143,7 +143,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         profileImageView.image = viewModel.profileImage
         nameLabel.text = viewModel.profileName
         messageLabel.text = viewModel.lastMessage
-        timeStampLabel.text = viewModel.lastMessageTimestamp
+        timeStampLabel.text = viewModel.lastMessageTimestamp.tellemDateString()
         viewModel.newMessages > 0 ? (newMessageAlertLabel.text = "\(viewModel.newMessages)") : (newMessageAlertLabel.text = "")
         messageStatusImageView.image = viewModel.messageStatusImage
     }

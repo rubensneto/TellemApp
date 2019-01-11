@@ -24,6 +24,8 @@ class TellemConversationTableViewControllerTests: XCTestCase {
         tableView?.register(TellemConversationTableViewCell.self, forCellReuseIdentifier: "ConversationCellId")
     }
     
+    
+    
     override func tearDown() {
         super.tearDown()
         conversationsTVC = nil

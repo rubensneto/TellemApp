@@ -23,12 +23,13 @@ class DateExtensionTests: XCTestCase {
     
     func testThatTellemDateStringReturnsCorrectValueForARemoteGivenDate(){
         //GIVEN
-        let unixTimestamp = 551262033.0
-        let date = Date(timeIntervalSince1970: unixTimestamp)
+        let expectedOutputString = "21/06/1987"
+        let unixTimestampForMyDOB = 551262033.0 // 21/06/1987
+        let date = Date(timeIntervalSince1970: unixTimestampForMyDOB)
         //WHEN
         let tellemString = date.tellemDateString()
         // THEN
-        XCTAssertEqual(tellemString, "21/06/1987")
+        XCTAssertEqual(tellemString, expectedOutputString)
         
     }
 

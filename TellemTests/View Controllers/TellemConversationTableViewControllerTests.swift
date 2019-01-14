@@ -48,24 +48,22 @@ class TellemConversationTableViewControllerTests: XCTestCase {
     func testThatCellContainingUnreadMessageDisplayBadge(){
         // GIVEN
         let indexPath = IndexPath(row: 0, section: 0)
-        let cell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
         // WHEN
+        let cell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
+        // THEN
         if let badgeText = cell.newMessageAlertLabel.text, let newMessages = Int(badgeText) {
-            // THEN
             XCTAssertEqual(newMessages, cell.viewModel.newMessages)
         } else if cell.viewModel.newMessages > 0 {
             XCTFail("Conversation cell does not display correct number of new messages")
         }
     }
     
-    func testThatCellDisplaysStatusImageForSentMessages() {
-//        // GIVEN
-//        let indexPath = IndexPath(row: 0, section: 0)
-//        let cell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
-//        // WHEN
-//        let messageStatusImage = cell.messageStatusImageView.image
-//        
-//        // THEN
-        
+    func testThatCellDisplaysStatusImageForPendingMessages() {
+        // GIVEN
+        let indexPath = IndexPath(row: 2, section: 0)
+        // WHEN
+        let cell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
+        // THEN
+        XCTAssertEqual(cell.viewModel.messageStatusImage.imageName, "messagePendingStatus")
     }
 }

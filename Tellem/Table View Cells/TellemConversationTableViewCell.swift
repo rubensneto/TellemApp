@@ -145,7 +145,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         messageLabel.text = viewModel.lastMessage
         timeStampLabel.text = viewModel.lastMessageTimestamp.tellemDateString()
         viewModel.newMessages > 0 ? (newMessageAlertLabel.text = "\(viewModel.newMessages)") : (newMessageAlertLabel.text = "")
-        messageStatusImageView.image = viewModel.messageStatusImage
+        messageStatusImageView.image = viewModel.messageStatusImage.image
     }
     
     private func setUpAccessibilityIdentifiers(){

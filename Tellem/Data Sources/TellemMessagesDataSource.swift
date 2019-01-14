@@ -14,6 +14,7 @@ class TellemMessageDataSource {
     
     private let userId = UserDefaults.standard.value(forKey: "userId") as! Int
     
+    
     private let amber = TellemUser(id: 11111, name: "Amber Parker", profileImage: UIImage(named: "gatinha1")!)
     private let lisa = TellemUser(id: 22222, name: "Lisa Michels", profileImage: UIImage(named: "gatinha2")!)
     private let zoe = TellemUser(id: 33333, name: "Zoe Baker", profileImage: UIImage(named: "gatinha3")!)

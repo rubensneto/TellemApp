@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum MessageStatus: Int {
+enum TellemMessageStatus: Int {
     case pending = 0
     case sent = 1
     case delivered = 2
@@ -22,17 +22,9 @@ class TellemConversationCellViewModel {
     var lastMessage: String!
     var lastMessageTimestamp: Date
     var newMessages: Int
-    var lastMessageStatus: MessageStatus!
+    var lastMessageStatus: TellemMessageStatus!
+    var messageStatusImage: TellemMessageStatusImage
     var displayMessageStatusView: Bool
-    
-    var messageStatusImage: UIImage {
-        switch lastMessageStatus! {
-        case .pending: return UIImage(named: "messagePendingStatus")!
-        case .sent: return UIImage(named: "messageSentStatus")!
-        case .delivered: return UIImage(named: "messageDeliveredStatus")!
-        case .read: return UIImage(named: "messageReadStatus")!
-        }
-    }
     
     init(message: TellemMessage){
         self.profileName = message.interlocutor.name
@@ -41,7 +33,7 @@ class TellemConversationCellViewModel {
         self.lastMessageTimestamp = message.timeStamp
         self.newMessages = message.interlocutor.newMessages
         self.lastMessageStatus = message.status
-        
+        self.messageStatusImage = TellemMessageStatusImage(messageStatus: message.status)
         let senderId = UserDefaults.standard.value(forKey: "userId") as! Int
         displayMessageStatusView =  message.senderId == senderId
     }

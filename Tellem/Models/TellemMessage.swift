@@ -20,7 +20,7 @@ struct TellemMessage {
     var type: TellemMessageType
     var text: String
     var timeStamp: Date
-    var status: MessageStatus
+    var status: TellemMessageStatus
 }
 
 class TellemUser {

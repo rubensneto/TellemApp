@@ -217,7 +217,7 @@
 				D05D9FA221C7F21E003F6234 /* Table View Cells */,
 				CE7E6975219AAE9900AF2FFC /* UI Components */,
 				CED1451421C38EFF005E72E2 /* View Controllers */,
-				D0D9F40421CA5C6E00086D59 /* ViewModels */,
+				D0D9F40421CA5C6E00086D59 /* View Models */,
 			);
 			path = Tellem;
 			sourceTree = "<group>";
@@ -344,13 +344,13 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
-		D0D9F40421CA5C6E00086D59 /* ViewModels */ = {
+		D0D9F40421CA5C6E00086D59 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
 				D0D9F40521CA5CD900086D59 /* TellemConversationCellViewModel.swift */,
 				D0D9F40721CA682D00086D59 /* TelelmConversationTableViewModel.swift */,
 			);
-			path = ViewModels;
+			path = "View Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

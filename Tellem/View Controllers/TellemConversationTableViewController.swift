@@ -29,7 +29,6 @@ class TellemConversationTableViewController: TellemTableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cellModels.count
     }
-
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TellemConversationTableViewCell
@@ -37,5 +36,10 @@ class TellemConversationTableViewController: TellemTableViewController {
         cellViewModel.indexPath = indexPath
         cell.viewModel = cellViewModel
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TellemConversationTableViewCell
+        if cell.viewModel != nil { cell.viewModel = nil }
     }
 }

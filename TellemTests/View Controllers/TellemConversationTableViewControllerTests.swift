@@ -66,4 +66,14 @@ class TellemConversationTableViewControllerTests: XCTestCase {
         // THEN
         XCTAssertEqual(cell.viewModel.messageStatusImage.imageName, "messagePendingStatus")
     }
+    
+    func testThatGinaCellDisplays23NewMessages() {
+        // GIVEN
+        let indexPath = IndexPath(row: 9, section: 0)
+        // WHEN
+        let ginaCell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
+        let newMessages = ginaCell.newMessageAlertLabel.text
+        // THEN
+        XCTAssertEqual(newMessages, "22")
+    }
 }

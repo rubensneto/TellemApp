@@ -9,7 +9,7 @@
 import UIKit
 
 class TellemConversationTableViewController: TellemTableViewController {
-    
+   
     let cellId = "ConversationCellId"
     var viewModel = TellemConversationTableViewModel()
 
@@ -17,7 +17,7 @@ class TellemConversationTableViewController: TellemTableViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = LocalizedString.chats
-        tableView.register(TellemConversationTableViewCell.self, forCellReuseIdentifier: cellId)
+        tableView.register(UINib(nibName: "TellemConversationTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
     }
 
     // MARK: - Table view data source

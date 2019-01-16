@@ -16,7 +16,7 @@ enum TellemMessageStatus: Int {
 }
 
 class TellemConversationCellViewModel {
-    var indexPath: IndexPath!
+    var message: TellemMessage
     var profileName: String
     var profileImage: UIImage
     var lastMessage: String!
@@ -24,9 +24,9 @@ class TellemConversationCellViewModel {
     var newMessages: Int
     var lastMessageStatus: TellemMessageStatus!
     var messageStatusImage: TellemMessageStatusImage
-    var displayMessageStatusView: Bool
     
     init(message: TellemMessage){
+        self.message = message
         self.profileName = message.interlocutor.name
         self.profileImage = message.interlocutor.profileImage
         self.lastMessage = message.text
@@ -34,8 +34,6 @@ class TellemConversationCellViewModel {
         self.newMessages = message.interlocutor.newMessages
         self.lastMessageStatus = message.status
         self.messageStatusImage = TellemMessageStatusImage(messageStatus: message.status)
-        let senderId = UserDefaults.standard.value(forKey: "userId") as! Int
-        displayMessageStatusView =  message.senderId == senderId
     }
 }
 

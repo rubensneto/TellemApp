@@ -38,7 +38,7 @@ class TellemMessageDataSource {
     
     init(){
         
-        let ginaMessage = TellemMessage(interlocutor: gina, senderId: userId, receiverId: gina.id, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: daysAgo(400)), status: .delivered)
+        let ginaMessage = TellemMessage(interlocutor: gina, senderId: gina.id, receiverId: userId, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: daysAgo(400)), status: .delivered)
         gina.newMessages = 23
         gina.lastMessage = ginaMessage
         messages.append(ginaMessage)
@@ -55,7 +55,7 @@ class TellemMessageDataSource {
         let nathalyMessage = TellemMessage(interlocutor: nathaly, senderId: userId, receiverId: nathaly.id, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: daysAgo(6)), status: .read)
         nathaly.lastMessage = nathalyMessage
         messages.append(nathalyMessage)
-        let kateMessage = TellemMessage(interlocutor: kate, senderId: kate.id, receiverId: userId, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: daysAgo(5)), status: .sent)
+        let kateMessage = TellemMessage(interlocutor: kate, senderId: kate.id, receiverId: userId, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long message", timeStamp: Date(timeIntervalSinceNow: daysAgo(5)), status: .sent)
         kate.newMessages = 7
         kate.lastMessage = kateMessage
         messages.append(kateMessage)

@@ -9,15 +9,16 @@
 import UIKit
 
 class TellemConversationTableViewController: TellemTableViewController {
-   
-    let cellId = "ConversationCellId"
+    
     var viewModel = TellemConversationTableViewModel()
-
+    var cellId: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = LocalizedString.chats
-        tableView.register(UINib(nibName: "TellemConversationTableViewCell", bundle: nil), forCellReuseIdentifier: cellId)
+        tableView.register(UINib.tableViewCell.conversationReceiverTableViewCell, forCellReuseIdentifier: UINib.identifier.conversationReceiverTableViewCell)
+        tableView.register(UINib.tableViewCell.conversationSenderTableViewCell, forCellReuseIdentifier: UINib.identifier.conversationSenderTableViewCell)
     }
 
     // MARK: - Table view data source
@@ -31,9 +32,14 @@ class TellemConversationTableViewController: TellemTableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TellemConversationTableViewCell
         let cellViewModel = viewModel.cellModels[indexPath.row]
-        cellViewModel.indexPath = indexPath
+        if cellViewModel.message.senderId == cellViewModel.message.interlocutor.id {
+            cellId =  UINib.identifier.conversationReceiverTableViewCell
+        } else {
+            cellId =  UINib.identifier.conversationSenderTableViewCell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TellemConversationTableViewCell
         cell.viewModel = cellViewModel
         return cell
     }

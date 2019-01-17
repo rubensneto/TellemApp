@@ -14,8 +14,6 @@ class TellemConversationTableViewCell: UITableViewCell {
         didSet {
             if viewModel != nil {
                 setNeedsLayout()
-                setUpViewModel()
-                layoutIfNeeded()
             }
         }
     }
@@ -34,10 +32,8 @@ class TellemConversationTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    // HELPERS
-    
-    
-    private func setUpViewModel(){
+    override func layoutSubviews() {
+        super.layoutSubviews()
         profileImageView.image = viewModel.profileImage
         profileImageView.layer.cornerRadius = 24
         profileImageView.clipsToBounds = true
@@ -51,24 +47,19 @@ class TellemConversationTableViewCell: UITableViewCell {
             messageStatusImageViewWidth.constant = messageStatusViewWidth()
         }
         
-        
         if reuseIdentifier == UINib.identifier.conversationReceiverTableViewCell {
             if viewModel.newMessages > 0 {
                 newMessageAlertView.isHidden = false
-                if viewModel.profileName == "Kate Peterson"{
-                    print(viewModel.profileName)
-                }
                 newMessageAlertLabel.text = "\(viewModel.newMessages)"
-                newMessageAlertLabel.sizeToFit()
-                newMessageAlertView.sizeToFit()
                 newMessageAlertView.layer.cornerRadius = 8.5
             } else {
                 newMessageAlertView.isHidden = true
                 newMessageAlertLabel.text = ""
             }
         }
-        
     }
+    
+    // HELPERS
     
     override func prepareForReuse() {
         print(viewModel.profileName)

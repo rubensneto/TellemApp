@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.set(12345, forKey: "userId")
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = UINavigationController(rootViewController: TellemConversationTableViewController())
+        window?.rootViewController = UINavigationController(rootViewController: TellemMessagesTableViewController())
         window?.makeKeyAndVisible()
         
        

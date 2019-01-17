@@ -23,18 +23,6 @@ struct TellemMessage {
     var status: TellemMessageStatus
 }
 
-class TellemUser {
-    var id: Int
-    var name: String
-    var profileImage: UIImage
-    var lastMessage: TellemMessage?
-    var newMessages: Int = 0
-    
-    init(id: Int, name: String, profileImage: UIImage){
-        self.id = id
-        self.name = name
-        self.profileImage = profileImage
-    }
-}
+
 
 

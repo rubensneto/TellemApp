@@ -7,15 +7,23 @@
 //
 
 import XCTest
+@testable import Tellem
 
 class TellemMessagesViewControllerTests: XCTestCase {
+    
+    var messagesTVC: TellemMessagesTableViewController!
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        messagesTVC = TellemMessagesTableViewController()
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        messagesTVC = nil
     }
-
+    
+    func testThatTableViewExistes(){
+        XCTAssertNotNil(messagesTVC.tableView)
+    }
+    
+    
 }

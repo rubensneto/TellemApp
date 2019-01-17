@@ -12,10 +12,12 @@ extension UINib {
     struct identifier {
         static let conversationSenderTableViewCell = "TellemConversationSenderTableViewCell"
         static let conversationReceiverTableViewCell = "TellemConversationReceiverTableViewCell"
+        static let tellemIncomingMessageTableViewCell = "TellemIncomingMessageTableViewCell"
     }
     
     struct tableViewCell {
         static let conversationSenderTableViewCell = UINib(nibName: "TellemConversationSenderTableViewCell", bundle: nil)
         static let conversationReceiverTableViewCell = UINib(nibName: "TellemConversationReceiverTableViewCell", bundle: nil)
+        static let tellemIncomingMessageTableViewCell = UINib(nibName: "TellemIncomingMessageTableViewCell", bundle: nil)
     }
 }

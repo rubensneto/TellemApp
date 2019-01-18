@@ -25,8 +25,6 @@ class TellemConversationTableViewControllerTests: XCTestCase {
         tableView?.register(UINib.tableViewCell.conversationSenderTableViewCell, forCellReuseIdentifier: UINib.identifier.conversationSenderTableViewCell)
     }
     
-    
-    
     override func tearDown() {
         super.tearDown()
         conversationsTVC = nil
@@ -46,14 +44,6 @@ class TellemConversationTableViewControllerTests: XCTestCase {
         XCTAssertEqual(numberOfRows, viewModel.cellModels.count)
     }
     
-    func testThatCellContainingUnreadMessageDisplayBadge(){
-        // GIVEN
-        let indexPath = IndexPath(row: 0, section: 0)
-        // WHEN
-        let cell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
-        // THEN
-        XCTAssertNotNil(cell.newMessageAlertLabel.text)
-    }
     
     func testThatCellDisplaysStatusImageForPendingMessages() {
         // GIVEN
@@ -64,13 +54,15 @@ class TellemConversationTableViewControllerTests: XCTestCase {
         XCTAssertEqual(cell.viewModel.messageStatusImage.imageName, "messagePendingStatus")
     }
     
-    func testThatGinaCellDisplays23NewMessages() {
+    func testThatNewMessagesMatchesViewModel() {
         // GIVEN
         let indexPath = IndexPath(row: 19, section: 0)
-        // WHEN
         let ginaCell = conversationsTVC.tableView(conversationsTVC.tableView, cellForRowAt: indexPath) as! TellemConversationTableViewCell
-        let newMessages = ginaCell.newMessageAlertLabel.text
+        // WHEN
+        ginaCell.layoutSubviews()
         // THEN
-        XCTAssertEqual(newMessages, "22")
+        let newMessages = ginaCell.newMessageAlertLabel.text
+        let cellModel = viewModel.cellModels[indexPath.row]
+        XCTAssertEqual(newMessages, String(cellModel.newMessages))
     }
 }

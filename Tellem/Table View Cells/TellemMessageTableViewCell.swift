@@ -11,20 +11,32 @@ import UIKit
 class TellemMessageTableViewCell: UITableViewCell {
 
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var messageBubbleView: UILabel!
+    @IBOutlet weak var messageBubbleView: UIView!
+    @IBOutlet weak var messageTimestampLabel: UILabel!
+    @IBOutlet weak var messageStatusImageView: UIImageView!
+    
+    var viewModel: TellemMessageCellViewModel! {
+        didSet{
+            if viewModel != nil {
+                layoutSubviews()
+            }
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        messageBubbleView.layer.cornerRadius = 8.5
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+            messageLabel.text = viewModel.text
+            messageTimestampLabel.text = viewModel.timestamp.hour()
+            messageBubbleView.layer.cornerRadius = 8.5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
 }

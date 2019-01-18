@@ -32,4 +32,5 @@ class UILabelExtensionTests: XCTestCase {
     func testKnownCalculatedHeight(){
         XCTAssertEqual(testLabel?.calculatedHeight, 19.5)
     }
+    
 }

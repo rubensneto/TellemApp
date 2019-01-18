@@ -49,7 +49,7 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rVj-dS-uEG" secondAttribute="trailing" constant="120" id="7op-qs-jMV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rVj-dS-uEG" secondAttribute="trailing" constant="100" id="7op-qs-jMV"/>
                     <constraint firstItem="Ofa-JT-aE2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OEQ-Ly-BWM"/>
                     <constraint firstItem="rVj-dS-uEG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="QQT-oH-M9c"/>
                     <constraint firstItem="rVj-dS-uEG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="S8E-Eg-D0c"/>
@@ -58,10 +58,11 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="messageBubbleView" destination="rVj-dS-uEG" id="ziL-HW-GR4"/>
-                <outlet property="messageLabel" destination="rVj-dS-uEG" id="uGe-H4-RCE"/>
+                <outlet property="messageBubbleView" destination="Ofa-JT-aE2" id="SX9-Ud-iKX"/>
+                <outlet property="messageLabel" destination="rVj-dS-uEG" id="HaM-L8-0Ok"/>
+                <outlet property="messageTimestampLabel" destination="3wm-65-TtB" id="ksM-EO-iTH"/>
             </connections>
-            <point key="canvasLocation" x="140.80000000000001" y="147.97601199400302"/>
+            <point key="canvasLocation" x="-349" y="227"/>
         </tableViewCell>
     </objects>
 </document>

@@ -44,4 +44,10 @@ extension Date {
             return LocalizedString.saturday
         }
     }
+    
+    func hour() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: self)
+    }
 }

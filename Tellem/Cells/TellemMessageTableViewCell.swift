@@ -14,6 +14,8 @@ class TellemMessageTableViewCell: UITableViewCell {
     @IBOutlet weak var messageBubbleView: UIView!
     @IBOutlet weak var messageTimestampLabel: UILabel!
     @IBOutlet weak var messageStatusImageView: UIImageView!
+    @IBOutlet weak var outgoingMessageStackView: UIStackView!
+    @IBOutlet weak var messageStatusImageViewWidth: NSLayoutConstraint!
     
     var viewModel: TellemMessageCellViewModel! {
         didSet{
@@ -23,6 +25,9 @@ class TellemMessageTableViewCell: UITableViewCell {
         }
     }
     
+    var maxBubbleWidth: CGFloat {
+        return frame.width - 100
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,13 +35,27 @@ class TellemMessageTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-            messageLabel.text = viewModel.text
-            messageTimestampLabel.text = viewModel.timestamp.hour()
-            messageBubbleView.layer.cornerRadius = 8.5
+        messageLabel.text = viewModel.text
+        messageTimestampLabel.text = viewModel.timestamp.hour()
+        messageBubbleView.layer.cornerRadius = 8.5
+        if viewModel.flow == .outgoing {
+            let statusImage = TellemMessageStatusImage(messageStatus: viewModel.status).image
+            messageStatusImageView.image = statusImage
+            messageStatusImageViewWidth.constant = messageStatusViewWidth()
+        } else {
+            
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    private func messageStatusViewWidth() -> CGFloat {
+        if viewModel.status == .read || viewModel.status == .delivered {
+            return 14.57
+        }
+        return 10
     }
 
 }

@@ -193,15 +193,15 @@
 			children = (
 				CEB936442196BFD000DF3860 /* AppDelegate.swift */,
 				CEB936502196BFE000DF3860 /* Info.plist */,
+				D05D9FA221C7F21E003F6234 /* Cells */,
+				CED1451421C38EFF005E72E2 /* Controllers */,
 				D0B4CAA521CD240200C02338 /* Data Sources */,
 				CE48CEBA21A010CE0067E30E /* Extensions */,
-				D0D9F40021CA590700086D59 /* Helper */,
+				D0D9F40021CA590700086D59 /* Helpers */,
 				D0B4CAA221CD1C8600C02338 /* Models */,
-				CED1451321C38E7B005E72E2 /* Support Files */,
-				D05D9FA221C7F21E003F6234 /* Table View Cells */,
 				CE7E6975219AAE9900AF2FFC /* UI Components */,
-				CED1451421C38EFF005E72E2 /* View Controllers */,
 				D0D9F40421CA5C6E00086D59 /* View Models */,
+				CED1451321C38E7B005E72E2 /* Support Files */,
 			);
 			path = Tellem;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 			path = "Support Files";
 			sourceTree = "<group>";
 		};
-		CED1451421C38EFF005E72E2 /* View Controllers */ = {
+		CED1451421C38EFF005E72E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				D05D9FA821C7F344003F6234 /* TellemConversationTableViewController.swift */,
@@ -250,16 +250,16 @@
 				D05D9FA621C7F301003F6234 /* TellemTableViewController.swift */,
 				D05D9FAA21C7F3F5003F6234 /* TellemViewController.swift */,
 			);
-			path = "View Controllers";
+			path = Controllers;
 			sourceTree = "<group>";
 		};
-		D05D9FA221C7F21E003F6234 /* Table View Cells */ = {
+		D05D9FA221C7F21E003F6234 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				D05D9FA321C7F280003F6234 /* TellemConversationTableViewCell.swift */,
 				CE26A0F521F0E77600EBE8DB /* TellemMessageTableViewCell.swift */,
 			);
-			path = "Table View Cells";
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		D0676C2321DF9140002FC71A /* View Models */ = {
@@ -310,13 +310,13 @@
 			path = "Data Sources";
 			sourceTree = "<group>";
 		};
-		D0D9F40021CA590700086D59 /* Helper */ = {
+		D0D9F40021CA590700086D59 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				D05D9F9A21C7B23A003F6234 /* LocalizedString.swift */,
 				D0D9F40121CA597D00086D59 /* AccessibilityIdentifier.swift */,
 			);
-			path = Helper;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D0D9F40421CA5C6E00086D59 /* View Models */ = {

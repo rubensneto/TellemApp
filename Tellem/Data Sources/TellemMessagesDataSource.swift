@@ -38,11 +38,11 @@ class TellemMessageDataSource {
     
     init(){
         
-        let ginaMessage = TellemMessage(interlocutor: gina, senderId: gina.id, receiverId: userId, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: daysAgo(400)), status: .delivered)
+        let ginaMessage = TellemMessage(interlocutor: gina, senderId: gina.id, receiverId: userId, type: .text, text: "I'm a message", timeStamp: Date(timeIntervalSinceNow: daysAgo(400)), status: .delivered)
         gina.newMessages = 23
         gina.lastMessage = ginaMessage
         messages.append(ginaMessage)
-        let amberMessage = TellemMessage(interlocutor: amber, senderId: amber.id, receiverId: userId, type: .text, text: "I'm a realy long message cause", timeStamp: Date(timeIntervalSinceNow: 0), status: .delivered)
+        let amberMessage = TellemMessage(interlocutor: amber, senderId: amber.id, receiverId: userId, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages. I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: 0), status: .read)
         amber.newMessages = 1
         amber.lastMessage = amberMessage
         messages.append(amberMessage)

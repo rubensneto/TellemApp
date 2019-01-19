@@ -12,48 +12,45 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TellemIncomingMessageTableViewCell" rowHeight="29" id="KGk-i7-Jjw" customClass="TellemMessageTableViewCell" customModule="Tellem" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="29"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TellemIncomingMessageTableViewCell" rowHeight="67" id="KGk-i7-Jjw" customClass="TellemMessageTableViewCell" customModule="Tellem" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="28.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ofa-JT-aE2">
-                        <rect key="frame" x="12" y="0.0" width="186.5" height="28.5"/>
+                        <rect key="frame" x="12" y="6" width="186.5" height="42.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Let's type a short message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVj-dS-uEG">
-                                <rect key="frame" x="6" y="6" width="174.5" height="16.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="muz-Q9-DJ4"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="1000" text="Let's type a short message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rVj-dS-uEG">
+                                <rect key="frame" x="6" y="6" width="174.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-65-TtB">
-                                <rect key="frame" x="155" y="13" width="29.5" height="13.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" text="21:09" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3wm-65-TtB">
+                                <rect key="frame" x="151" y="25" width="29.5" height="13.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3wm-65-TtB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ofa-JT-aE2" secondAttribute="leading" constant="4" id="5t8-jb-SHU"/>
+                            <constraint firstAttribute="bottom" secondItem="3wm-65-TtB" secondAttribute="bottom" constant="4" id="I8T-Vj-a2h"/>
                             <constraint firstAttribute="trailing" secondItem="rVj-dS-uEG" secondAttribute="trailing" constant="6" id="KtV-fj-1RH"/>
                             <constraint firstItem="rVj-dS-uEG" firstAttribute="top" secondItem="Ofa-JT-aE2" secondAttribute="top" constant="6" id="OnD-Jy-e1C"/>
-                            <constraint firstAttribute="bottom" secondItem="rVj-dS-uEG" secondAttribute="bottom" constant="6" id="arJ-Ks-93s"/>
-                            <constraint firstAttribute="trailing" secondItem="3wm-65-TtB" secondAttribute="trailing" constant="2" id="jRl-yd-pWR"/>
                             <constraint firstItem="rVj-dS-uEG" firstAttribute="leading" secondItem="Ofa-JT-aE2" secondAttribute="leading" constant="6" id="lPx-UK-rFq"/>
-                            <constraint firstAttribute="bottom" secondItem="3wm-65-TtB" secondAttribute="bottom" constant="2" id="z9X-sM-OQw"/>
+                            <constraint firstItem="3wm-65-TtB" firstAttribute="top" secondItem="rVj-dS-uEG" secondAttribute="bottom" constant="2" id="rXb-xt-dfQ"/>
+                            <constraint firstAttribute="trailing" secondItem="3wm-65-TtB" secondAttribute="trailing" constant="6" id="uFL-Ym-AyO"/>
                         </constraints>
                     </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="rVj-dS-uEG" secondAttribute="trailing" constant="100" id="7op-qs-jMV"/>
-                    <constraint firstItem="Ofa-JT-aE2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="OEQ-Ly-BWM"/>
-                    <constraint firstItem="rVj-dS-uEG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="QQT-oH-M9c"/>
+                    <constraint firstItem="rVj-dS-uEG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="QQT-oH-M9c"/>
                     <constraint firstItem="rVj-dS-uEG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="S8E-Eg-D0c"/>
-                    <constraint firstAttribute="bottom" secondItem="Ofa-JT-aE2" secondAttribute="bottom" id="mBq-9r-bC7"/>
+                    <constraint firstAttribute="bottom" secondItem="3wm-65-TtB" secondAttribute="bottom" constant="12" id="SCG-vT-0jX"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -62,7 +59,7 @@
                 <outlet property="messageLabel" destination="rVj-dS-uEG" id="HaM-L8-0Ok"/>
                 <outlet property="messageTimestampLabel" destination="3wm-65-TtB" id="ksM-EO-iTH"/>
             </connections>
-            <point key="canvasLocation" x="-349" y="227"/>
+            <point key="canvasLocation" x="-350.39999999999998" y="238.83058470764618"/>
         </tableViewCell>
     </objects>
 </document>

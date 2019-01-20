@@ -8,24 +8,35 @@
 
 import Foundation
 
+enum TellemDateString {
+    case conversationCell
+    case messagesSection
+}
+
 extension Date {
     
-    func tellemDateString() -> String {
+    func tellemDateString(type: TellemDateString) -> String {
         
         let interval = Calendar.current.dateComponents([.day], from: self, to: Date())
-        
         let formatter = DateFormatter()
         
         switch interval.day {
         case 0:
-            formatter.dateFormat = "HH:mm"
-            return formatter.string(from: self)
+            switch type {
+            case .conversationCell:
+                formatter.dateFormat = "HH:mm"
+                return formatter.string(from: self)
+            case .messagesSection:
+                return LocalizedString.today
+            }
+            
         case 1:
             return LocalizedString.yesterday
+            
         case 2, 3, 4, 5:
             let weekday = Calendar.current.component(.weekday, from: self)
-            
             return weekdayFrom(weekday)
+            
         default:
             formatter.dateFormat = "dd/MM/yyyy"
             return formatter.string(from: self)
@@ -49,5 +60,10 @@ extension Date {
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         return formatter.string(from: self)
+    }
+    
+    func daysIntervalFrom(date: Date) -> Int {
+        let interval = Calendar.current.dateComponents([.day], from: self, to: date)
+        return interval.day!
     }
 }

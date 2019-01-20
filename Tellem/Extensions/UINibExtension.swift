@@ -14,6 +14,7 @@ extension UINib {
         static let conversationReceiverTableViewCell = "TellemConversationReceiverTableViewCell"
         static let tellemIncomingMessageTableViewCell = "TellemIncomingMessageTableViewCell"
         static let tellemOutgoingMessageTableViewCell = "TellemOutgoingMessageTableViewCell"
+        static let tellemMessagesTableViewHeader = "TellemMessagesTableViewHeader"
     }
     
     struct tableViewCell {
@@ -21,5 +22,6 @@ extension UINib {
         static let conversationReceiverTableViewCell = UINib(nibName: "TellemConversationReceiverTableViewCell", bundle: nil)
         static let tellemIncomingMessageTableViewCell = UINib(nibName: "TellemIncomingMessageTableViewCell", bundle: nil)
         static let tellemOutgoingMessageTableViewCell = UINib(nibName: "TellemOutgoingMessageTableViewCell", bundle: nil)
+        static let tellemMessagesTableViewHeader = UINib(nibName: "TellemMessagesTableViewHeader", bundle: nil)
     }
 }

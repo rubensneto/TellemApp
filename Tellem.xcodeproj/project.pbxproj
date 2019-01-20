@@ -11,6 +11,8 @@
 		CE26A0F621F0E77600EBE8DB /* TellemMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26A0F521F0E77600EBE8DB /* TellemMessageTableViewCell.swift */; };
 		CE26A0F821F0E98600EBE8DB /* TellemMessagesTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26A0F721F0E98600EBE8DB /* TellemMessagesTableViewControllerTests.swift */; };
 		CE26A0FA21F0F4DC00EBE8DB /* TellemOutgoingMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE26A0F921F0F4DC00EBE8DB /* TellemOutgoingMessageTableViewCell.xib */; };
+		CE26A0FC21F4851200EBE8DB /* TellemMessagesTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE26A0FB21F4851100EBE8DB /* TellemMessagesTableViewHeader.xib */; };
+		CE26A0FE21F48A3A00EBE8DB /* TellemMessagesTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE26A0FD21F48A3A00EBE8DB /* TellemMessagesTableViewHeader.swift */; };
 		CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBB21A0112B0067E30E /* StringExtension.swift */; };
 		CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */; };
 		CE5B1A5321F08216009902E3 /* TellemUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5B1A5221F08216009902E3 /* TellemUser.swift */; };
@@ -52,7 +54,6 @@
 		D06881C221F1D5E800EE6D60 /* TellemMessageCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06881C121F1D5E800EE6D60 /* TellemMessageCellViewModel.swift */; };
 		D0B4CAA421CD1CB400C02338 /* TellemMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4CAA321CD1CB400C02338 /* TellemMessage.swift */; };
 		D0B4CAA721CD244700C02338 /* TellemMessagesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B4CAA621CD244700C02338 /* TellemMessagesDataSource.swift */; };
-		D0D9F40221CA597D00086D59 /* AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D9F40121CA597D00086D59 /* AccessibilityIdentifier.swift */; };
 		D0D9F40621CA5CD900086D59 /* TellemConversationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D9F40521CA5CD900086D59 /* TellemConversationCellViewModel.swift */; };
 		D0D9F40821CA682D00086D59 /* TelelmConversationTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D9F40721CA682D00086D59 /* TelelmConversationTableViewModel.swift */; };
 		D0D9F40A21CA9EFB00086D59 /* TellemConversationTableViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D9F40921CA9EFB00086D59 /* TellemConversationTableViewControllerTests.swift */; };
@@ -73,6 +74,8 @@
 		CE26A0F521F0E77600EBE8DB /* TellemMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemMessageTableViewCell.swift; sourceTree = "<group>"; };
 		CE26A0F721F0E98600EBE8DB /* TellemMessagesTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemMessagesTableViewControllerTests.swift; sourceTree = "<group>"; };
 		CE26A0F921F0F4DC00EBE8DB /* TellemOutgoingMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TellemOutgoingMessageTableViewCell.xib; sourceTree = "<group>"; };
+		CE26A0FB21F4851100EBE8DB /* TellemMessagesTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TellemMessagesTableViewHeader.xib; sourceTree = "<group>"; };
+		CE26A0FD21F48A3A00EBE8DB /* TellemMessagesTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemMessagesTableViewHeader.swift; sourceTree = "<group>"; };
 		CE48CEBB21A0112B0067E30E /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CE48CEBD21A3DD640067E30E /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		CE5B1A5221F08216009902E3 /* TellemUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemUser.swift; sourceTree = "<group>"; };
@@ -119,7 +122,6 @@
 		D06881C121F1D5E800EE6D60 /* TellemMessageCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemMessageCellViewModel.swift; sourceTree = "<group>"; };
 		D0B4CAA321CD1CB400C02338 /* TellemMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemMessage.swift; sourceTree = "<group>"; };
 		D0B4CAA621CD244700C02338 /* TellemMessagesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemMessagesDataSource.swift; sourceTree = "<group>"; };
-		D0D9F40121CA597D00086D59 /* AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifier.swift; sourceTree = "<group>"; };
 		D0D9F40521CA5CD900086D59 /* TellemConversationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemConversationCellViewModel.swift; sourceTree = "<group>"; };
 		D0D9F40721CA682D00086D59 /* TelelmConversationTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelelmConversationTableViewModel.swift; sourceTree = "<group>"; };
 		D0D9F40921CA9EFB00086D59 /* TellemConversationTableViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TellemConversationTableViewControllerTests.swift; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			children = (
 				D05D9FA321C7F280003F6234 /* TellemConversationTableViewCell.swift */,
 				CE26A0F521F0E77600EBE8DB /* TellemMessageTableViewCell.swift */,
+				CE26A0FD21F48A3A00EBE8DB /* TellemMessagesTableViewHeader.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				D06881BF21EF8AD200EE6D60 /* TellemConversationReceiverTableViewCell.xib */,
 				CE26A0F021F0C1C000EBE8DB /* TellemIncomingMessageTableViewCell.xib */,
 				CE26A0F921F0F4DC00EBE8DB /* TellemOutgoingMessageTableViewCell.xib */,
+				CE26A0FB21F4851100EBE8DB /* TellemMessagesTableViewHeader.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -314,7 +318,6 @@
 			isa = PBXGroup;
 			children = (
 				D05D9F9A21C7B23A003F6234 /* LocalizedString.swift */,
-				D0D9F40121CA597D00086D59 /* AccessibilityIdentifier.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -414,6 +417,7 @@
 				CE26A0F221F0C1C000EBE8DB /* TellemIncomingMessageTableViewCell.xib in Resources */,
 				D06881C021EF8AD200EE6D60 /* TellemConversationReceiverTableViewCell.xib in Resources */,
 				CEB9364F2196BFE000DF3860 /* LaunchScreen.storyboard in Resources */,
+				CE26A0FC21F4851200EBE8DB /* TellemMessagesTableViewHeader.xib in Resources */,
 				D06881BC21EF36D100EE6D60 /* TellemConversationSenderTableViewCell.xib in Resources */,
 				CE26A0FA21F0F4DC00EBE8DB /* TellemOutgoingMessageTableViewCell.xib in Resources */,
 				CED1451821C391C8005E72E2 /* Localizable.strings in Resources */,
@@ -444,6 +448,7 @@
 				D049076D21C3FF170095BE75 /* TellemSearchViewController.swift in Sources */,
 				D06881B321E8F43900EE6D60 /* TellemMessagesTableViewController.swift in Sources */,
 				CE48CEBC21A0112B0067E30E /* StringExtension.swift in Sources */,
+				CE26A0FE21F48A3A00EBE8DB /* TellemMessagesTableViewHeader.swift in Sources */,
 				D05D9F9821C7B1F3003F6234 /* TellemTextButton.swift in Sources */,
 				D05D9F9921C7B1F3003F6234 /* TellemButton.swift in Sources */,
 				D06881B721ECC17800EE6D60 /* TellemMessageStatusImage.swift in Sources */,
@@ -459,7 +464,6 @@
 				D05D9FA921C7F344003F6234 /* TellemConversationTableViewController.swift in Sources */,
 				CE5B1A5321F08216009902E3 /* TellemUser.swift in Sources */,
 				D0B4CAA421CD1CB400C02338 /* TellemMessage.swift in Sources */,
-				D0D9F40221CA597D00086D59 /* AccessibilityIdentifier.swift in Sources */,
 				D06881C221F1D5E800EE6D60 /* TellemMessageCellViewModel.swift in Sources */,
 				CE26A0F621F0E77600EBE8DB /* TellemMessageTableViewCell.swift in Sources */,
 				CE48CEBE21A3DD640067E30E /* UIViewControllerExtension.swift in Sources */,

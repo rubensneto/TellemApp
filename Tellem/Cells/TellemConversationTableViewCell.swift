@@ -40,7 +40,7 @@ class TellemConversationTableViewCell: UITableViewCell {
         
         nameLabel.text = viewModel.profileName
         messageLabel.text = viewModel.lastMessage
-        timeStampLabel.text = viewModel.lastMessageTimestamp.tellemDateString()
+        timeStampLabel.text = viewModel.lastMessageTimestamp.tellemDateString(type: .conversationCell)
         
         if reuseIdentifier == UINib.identifier.conversationSenderTableViewCell {
             messageStatusImageView.image = viewModel.messageStatusImage.image

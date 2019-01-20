@@ -26,6 +26,7 @@ struct LocalizedString {
     static let emailsDontMatchWarning = NSLocalizedString("emailsDontMatchWarning", comment: "")
     static let passwordsDontMatchWarning = NSLocalizedString("passwordsDontMatchWarning", comment: "")
     static let chats = NSLocalizedString("chats", comment: "")
+    static let today = NSLocalizedString("today", comment: "")
     static let yesterday = NSLocalizedString("yesterday", comment: "")
     static let monday = NSLocalizedString("monday", comment: "")
     static let tuesday = NSLocalizedString("tuesday", comment: "")

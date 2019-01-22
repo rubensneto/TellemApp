@@ -16,7 +16,7 @@ class DateExtensionTests: XCTestCase {
         let twentyFourHours: Double = 60 * 60 * 24
         let yesterday = Date(timeIntervalSinceNow: -twentyFourHours)
         // WHEN
-        let tellemString = yesterday.tellemDateString()
+        let tellemString = yesterday.tellemDateString(type: .conversationCell)
         // THEN
         XCTAssertEqual(tellemString, LocalizedString.yesterday)
     }
@@ -27,10 +27,17 @@ class DateExtensionTests: XCTestCase {
         let unixTimestampForMyDOB = 551262033.0 // 21/06/1987
         let date = Date(timeIntervalSince1970: unixTimestampForMyDOB)
         //WHEN
-        let tellemString = date.tellemDateString()
+        let tellemString = date.tellemDateString(type: .conversationCell)
         // THEN
         XCTAssertEqual(tellemString, expectedOutputString)
-        
     }
-
+    
+    func testThatDateStringReturnsTodayString(){
+        // GIVEN
+        let date = Date()
+        // WHEN
+        let string = date.tellemDateString(type: .messagesSection)
+        // THEN
+        XCTAssertEqual(string, LocalizedString.today)
+    }
 }

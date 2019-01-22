@@ -24,5 +24,4 @@ class TellemMessagesTableViewHeader: UITableViewHeaderFooterView {
         super.awakeFromNib()
         bubbleView.layer.cornerRadius = 8.5
     }
-
 }

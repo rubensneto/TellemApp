@@ -46,8 +46,6 @@ class TellemMessageDataSource {
         amber.newMessages = 1
         amber.lastMessage = amberMessage
         messages.append(amberMessage)
-        let amberMessage2 = TellemMessage(interlocutor: amber, senderId: userId, receiverId: amber.id, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: -4), status: .read)
-        messages.append(amberMessage2)
         let lisaMessage = TellemMessage(interlocutor: lisa, senderId: userId, receiverId: lisa.id, type: .text, text: "I'm a realy long message cause Rubens needs to test the cell behavior with long messages", timeStamp: Date(timeIntervalSinceNow: daysAgo(35)), status: .delivered)
         lisa.lastMessage = lisaMessage
         messages.append(lisaMessage)

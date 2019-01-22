@@ -19,10 +19,10 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3v0-qs-fpO">
-                        <rect key="frame" x="150.5" y="6" width="74" height="16.5"/>
+                        <rect key="frame" x="150.5" y="5" width="74" height="19.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgT-9D-Xlc">
-                                <rect key="frame" x="5" y="0.0" width="64" height="16.5"/>
+                                <rect key="frame" x="5" y="1" width="64" height="16.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -32,8 +32,8 @@
                         <constraints>
                             <constraint firstItem="VgT-9D-Xlc" firstAttribute="leading" secondItem="3v0-qs-fpO" secondAttribute="leading" constant="5" id="Jhz-1Z-lnd"/>
                             <constraint firstAttribute="trailing" secondItem="VgT-9D-Xlc" secondAttribute="trailing" constant="5" id="nSz-sR-CXv"/>
-                            <constraint firstItem="VgT-9D-Xlc" firstAttribute="top" secondItem="3v0-qs-fpO" secondAttribute="top" id="vAh-dS-O2u"/>
-                            <constraint firstAttribute="bottom" secondItem="VgT-9D-Xlc" secondAttribute="bottom" id="w1f-LA-Uwd"/>
+                            <constraint firstItem="VgT-9D-Xlc" firstAttribute="top" secondItem="3v0-qs-fpO" secondAttribute="top" constant="1" id="vAh-dS-O2u"/>
+                            <constraint firstAttribute="bottom" secondItem="VgT-9D-Xlc" secondAttribute="bottom" constant="2" id="w1f-LA-Uwd"/>
                         </constraints>
                     </view>
                 </subviews>

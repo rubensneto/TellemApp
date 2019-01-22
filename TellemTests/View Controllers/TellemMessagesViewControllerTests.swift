@@ -11,18 +11,18 @@ import XCTest
 
 class TellemMessagesViewControllerTests: XCTestCase {
     
-    var messagesTVC: TellemMessagesTableViewController!
+    var messagesVC: TellemMessagesViewController!
 
     override func setUp() {
-        messagesTVC = TellemMessagesTableViewController()
+        messagesVC = TellemMessagesViewController()
     }
 
     override func tearDown() {
-        messagesTVC = nil
+        messagesVC = nil
     }
     
     func testThatTableViewExistes(){
-        XCTAssertNotNil(messagesTVC.tableView)
+        XCTAssertNotNil(messagesVC.tableView)
     }
     
     

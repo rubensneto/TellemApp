@@ -23,6 +23,7 @@ class TellemMessageInputView: UIView {
         super.init(frame: frame)
         Bundle.main.loadNibNamed("TellemMessageInputView", owner: self, options: nil)
         self.addSubview(self.view);
+        inputTextView.layer.cornerRadius = 15
     }
     
     required init?(coder aDecoder: NSCoder) {

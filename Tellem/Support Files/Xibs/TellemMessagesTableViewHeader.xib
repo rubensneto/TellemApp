@@ -24,11 +24,10 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalHuggingPriority="750" text="Yesterday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VgT-9D-Xlc">
                                 <rect key="frame" x="5" y="1" width="64" height="16.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.45138680930000002" green="0.99309605359999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.85490196078431369" green="0.9137254901960784" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VgT-9D-Xlc" firstAttribute="leading" secondItem="3v0-qs-fpO" secondAttribute="leading" constant="5" id="Jhz-1Z-lnd"/>
                             <constraint firstAttribute="trailing" secondItem="VgT-9D-Xlc" secondAttribute="trailing" constant="5" id="nSz-sR-CXv"/>

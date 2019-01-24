@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TellemMessagesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class TellemMessagesViewController: TellemViewController, UITableViewDelegate, UITableViewDataSource {
     
     var viewModel = TellemMessagesTableViewModel()
     
@@ -21,7 +21,14 @@ class TellemMessagesViewController: UIViewController, UITableViewDelegate, UITab
     
     let messageInputView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.Tellem.white
+        view.backgroundColor = UIColor.Tellem.superLightGray
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    let separatorView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.Tellem.lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -35,6 +42,7 @@ class TellemMessagesViewController: UIViewController, UITableViewDelegate, UITab
     
     let sendTextButton: UIButton = {
         let button = UIButton()
+        button.alpha = 0.5
         button.setImage(UIImage(named: "sent-mail"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -49,19 +57,10 @@ class TellemMessagesViewController: UIViewController, UITableViewDelegate, UITab
         textView.translatesAutoresizingMaskIntoConstraints = false
         return textView
     }()
-    
-//    let messageInputView: TellemMessageInputView = {
-//        let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 42)
-//        let inputView = TellemMessageInputView(frame: frame)
-//        inputView.translatesAutoresizingMaskIntoConstraints = false
-//        return inputView
-//    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        edgesForExtendedLayout = []
-        
+                
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -109,6 +108,8 @@ class TellemMessagesViewController: UIViewController, UITableViewDelegate, UITab
     func setUpUI(){
         view.addSubview(tableView)
         view.addSubview(messageInputView)
+        
+        messageInputView.addSubview(separatorView)
         messageInputView.addSubview(sendPhotoButton)
         messageInputView.addSubview(messageInputTextView)
         messageInputView.addSubview(sendTextButton)
@@ -123,19 +124,24 @@ class TellemMessagesViewController: UIViewController, UITableViewDelegate, UITab
         messageInputView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         messageInputView.heightAnchor.constraint(equalToConstant: 42).isActive = true
         
+        separatorView.topAnchor.constraint(equalTo: messageInputView.topAnchor).isActive = true
+        separatorView.leftAnchor.constraint(equalTo: messageInputView.leftAnchor).isActive = true
+        separatorView.rightAnchor.constraint(equalTo: messageInputView.rightAnchor).isActive = true
+        separatorView.heightAnchor.constraint(equalToConstant: 0.5).isActive = true
+        
         sendPhotoButton.leftAnchor.constraint(equalTo: messageInputView.leftAnchor , constant: 8).isActive = true
-        sendPhotoButton.bottomAnchor.constraint(equalTo: messageInputView.bottomAnchor , constant: -6).isActive = true
-        sendPhotoButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        sendPhotoButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        sendPhotoButton.bottomAnchor.constraint(equalTo: messageInputView.bottomAnchor , constant: -12).isActive = true
+        sendPhotoButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        sendPhotoButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         sendTextButton.rightAnchor.constraint(equalTo: messageInputView.rightAnchor , constant: -8).isActive = true
-        sendTextButton.bottomAnchor.constraint(equalTo: messageInputView.bottomAnchor , constant: -6).isActive = true
-        sendTextButton.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        sendTextButton.widthAnchor.constraint(equalToConstant: 24).isActive = true
+        sendTextButton.bottomAnchor.constraint(equalTo: messageInputView.bottomAnchor , constant: -12).isActive = true
+        sendTextButton.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        sendTextButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
         messageInputTextView.topAnchor.constraint(equalTo: messageInputView.topAnchor, constant: 6).isActive = true
-        messageInputTextView.leftAnchor.constraint(equalTo: sendPhotoButton.rightAnchor, constant: 6).isActive = true
-        messageInputTextView.rightAnchor.constraint(equalTo: sendTextButton.leftAnchor, constant: -6).isActive = true
+        messageInputTextView.leftAnchor.constraint(equalTo: sendPhotoButton.rightAnchor, constant: 8).isActive = true
+        messageInputTextView.rightAnchor.constraint(equalTo: sendTextButton.leftAnchor, constant: -8).isActive = true
         messageInputTextView.bottomAnchor.constraint(equalTo: messageInputView.bottomAnchor, constant: -6).isActive = true
     }
 }

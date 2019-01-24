@@ -31,6 +31,7 @@ class TellemMessageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
     
     override func layoutSubviews() {

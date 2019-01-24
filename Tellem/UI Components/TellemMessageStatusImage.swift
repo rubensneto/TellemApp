@@ -25,6 +25,10 @@ class TellemMessageStatusImage {
             self.imageName = "messageReadStatus"
         }
         
-        self.image = UIImage(named: self.imageName)!
+        if messageStatus == .read {
+            self.image = UIImage(named: self.imageName)!.image(withColor: UIColor.Tellem.blue)
+        } else {
+            self.image = UIImage(named: self.imageName)!
+        }
     }
 }

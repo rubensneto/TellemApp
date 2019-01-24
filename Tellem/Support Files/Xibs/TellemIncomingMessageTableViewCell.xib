@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3wm-65-TtB" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ofa-JT-aE2" secondAttribute="leading" constant="4" id="5t8-jb-SHU"/>
                             <constraint firstAttribute="bottom" secondItem="3wm-65-TtB" secondAttribute="bottom" constant="4" id="I8T-Vj-a2h"/>
@@ -59,7 +59,7 @@
                 <outlet property="messageLabel" destination="rVj-dS-uEG" id="HaM-L8-0Ok"/>
                 <outlet property="messageTimestampLabel" destination="3wm-65-TtB" id="ksM-EO-iTH"/>
             </connections>
-            <point key="canvasLocation" x="-350.39999999999998" y="238.83058470764618"/>
+            <point key="canvasLocation" x="98" y="251"/>
         </tableViewCell>
     </objects>
 </document>

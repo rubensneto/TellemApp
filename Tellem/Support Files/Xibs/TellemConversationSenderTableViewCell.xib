@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="379-8h-J76">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo-camera" translatesAutoresizingMaskIntoConstraints="NO" id="379-8h-J76">
                         <rect key="frame" x="12" y="12.5" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="48" id="PAd-j1-j4W"/>
@@ -80,5 +80,6 @@
     </objects>
     <resources>
         <image name="messageReadStatus" width="51" height="27"/>
+        <image name="photo-camera" width="24" height="24"/>
     </resources>
 </document>
